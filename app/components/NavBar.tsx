@@ -54,7 +54,7 @@ export default function NavBar() {
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Container
           display="flex"
-          h={16}
+          h={18}
           alignItems={'center'}
           justifyContent={'space-between'}
           mx="auto"
