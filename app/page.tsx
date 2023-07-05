@@ -1,13 +1,16 @@
 "use client";
 import Image from "next/image";
 import { Link } from "@chakra-ui/next-js";
-import { Box } from "@chakra-ui/react";
+import { Box, Container, Heading } from "@chakra-ui/react";
 const Home: React.FC = () => {
   return (
-    <Box as="main">
-      <h1>Home</h1>
-      <Link href="/work">Work</Link>
-    </Box>
+    <Container maxW="container.md">
+      <Box display={{ md: "flex" }} py={5}>
+        <Heading as="h2" variant="page-title">
+          Nirmal Fernando
+        </Heading>
+      </Box>
+    </Container>
   );
 };
 export default Home;

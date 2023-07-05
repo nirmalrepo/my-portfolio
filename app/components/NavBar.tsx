@@ -1,5 +1,5 @@
-'use client'
-import { ReactNode } from 'react'
+"use client";
+import { ReactNode, forwardRef, Ref } from "react";
 import {
   Box,
   Flex,
@@ -7,6 +7,7 @@ import {
   IconButton,
   Button,
   Menu,
+  Link,
   MenuButton,
   MenuList,
   MenuItem,
@@ -14,65 +15,58 @@ import {
   useColorModeValue,
   Stack,
   Container,
-} from '@chakra-ui/react'
-import Link from 'next/link'
-import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
+} from "@chakra-ui/react";
+import NextLink from "next/link";
+import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 export interface NavItem {
-  label: string
-  href: string
+  label: string;
+  href: string;
 }
 
 export const Links: NavItem[] = [
   {
-    label: 'Home',
-    href: '/',
+    label: "Home",
+    href: "/",
   },
   {
-    label: 'Work',
-    href: '/work',
+    label: "Work",
+    href: "/work",
   },
   {
-    label: 'Hobbies',
-    href: '/hobbies',
+    label: "Hobbies",
+    href: "/hobbies",
   },
   {
-    label: 'Contact',
-    href: '/contact',
+    label: "Contact",
+    href: "/contact",
   },
-]
+];
 
-const NavLink = ({ href, children }: { href: string; children: ReactNode }) => (
-  <Link href={`${href}`}>{children}</Link>
-)
+const NavLink = forwardRef<HTMLAnchorElement, any>((props, ref) => (
+  <Link as={NextLink} href={`${props.href}`} ref={ref} {...props} />
+));
 
 export default function NavBar() {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Container
           display="flex"
           h={16}
-          alignItems={'center'}
-          justifyContent={'space-between'}
+          alignItems={"center"}
+          justifyContent={"space-between"}
           mx="auto"
           maxW="container.md"
         >
-          <HStack spacing={8} alignItems={'center'}>
+          <HStack spacing={8} alignItems={"center"}>
             <Box>Logo</Box>
-          </HStack>
-          <HStack spacing={8} alignItems={'center'}>
-            <Box>
-              <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              </Button>
-            </Box>
             <HStack
-              as={'nav'}
+              as={"nav"}
               spacing={4}
-              display={{ base: 'none', md: 'flex' }}
+              display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
                 <NavLink key={link.label} href={link.href}>
@@ -80,7 +74,15 @@ export default function NavBar() {
                 </NavLink>
               ))}
             </HStack>
-            <Box display={{ md: 'none' }}>
+          </HStack>
+          <HStack spacing={8} alignItems={"center"}>
+            <Box>
+              <Button onClick={toggleColorMode}>
+                {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+              </Button>
+            </Box>
+
+            <Box ml={2} display={{ base: "inline-block", md: "none" }}>
               <Menu>
                 <MenuButton
                   as={IconButton}
@@ -90,7 +92,9 @@ export default function NavBar() {
                 />
                 <MenuList>
                   {Links.map((link) => (
-                    <MenuItem key={link.label}>{link.label}</MenuItem>
+                    <MenuItem key={link.label} as={NavLink} href={link.href}>
+                      {link.label}
+                    </MenuItem>
                   ))}
                 </MenuList>
               </Menu>
@@ -106,5 +110,5 @@ export default function NavBar() {
         </Container>
       </Box>
     </>
-  )
+  );
 }
