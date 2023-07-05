@@ -1,10 +1,11 @@
-import Image from "next/image";
+'use client'
+import Image from 'next/image'
 
 const Work: React.FC = () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <h1>Work</h1>
     </main>
-  );
-};
-export default Work;
+  )
+}
+export default Work
