@@ -1,12 +1,12 @@
-"use client";
-import { AnimatePresence } from "framer-motion";
-import { Providers } from "./providers";
-import NavBar from "./components/NavBar";
+'use client'
+import { Providers } from './providers'
+import NavBar from './components/NavBar'
+import { AnimatePresence } from 'framer-motion'
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -14,9 +14,15 @@ export default function RootLayout({
       <body>
         <Providers>
           <NavBar />
-          {children}
+          <AnimatePresence
+            mode="wait"
+            initial={true}
+            onExitComplete={() => console.log('Here')}
+          >
+            {children}
+          </AnimatePresence>
         </Providers>
       </body>
     </html>
-  );
+  )
 }
