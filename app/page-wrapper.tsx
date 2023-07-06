@@ -1,33 +1,29 @@
 'use client'
-
+import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
+import path from 'path'
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },
   enter: { opacity: 1, x: 0, y: 0 },
-  exit: { opacity: 1, x: -0, y: 20 },
+  exit: { opacity: 0, x: -0, y: 20 },
 }
 
-const PageWrapper = ({
-  children,
-  name,
-}: {
-  children: React.ReactNode
-  name: string
-}) => {
+export const PageWrapper = ({ children }: { children: React.ReactNode }) => {
+  const path = usePathname()
   return (
-    <motion.article
-      key={name}
-      initial="hidden"
-      animate="enter"
-      exit="exit"
-      variants={variants}
-      transition={{ duration: 0.4, type: 'easeInOut' }}
-      style={{ position: 'relative' }}
-    >
-      {children}
-    </motion.article>
+    <AnimatePresence>
+      <motion.article
+        key={path}
+        initial="hidden"
+        animate="enter"
+        exit="exit"
+        variants={variants}
+        transition={{ duration: 0.4, type: 'easeInOut' }}
+        style={{ position: 'relative' }}
+      >
+        {children}
+      </motion.article>
+    </AnimatePresence>
   )
 }
-
-export default PageWrapper

@@ -1,7 +1,7 @@
 'use client'
 import { Providers } from './providers'
 import NavBar from './components/NavBar'
-import { AnimatePresence } from 'framer-motion'
+import { PageWrapper } from './page-wrapper'
 
 export default function RootLayout({
   children,
@@ -14,13 +14,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <NavBar />
-          <AnimatePresence
-            mode="wait"
-            initial={true}
-            onExitComplete={() => console.log('Here')}
-          >
-            {children}
-          </AnimatePresence>
+          <PageWrapper>{children}</PageWrapper>
         </Providers>
       </body>
     </html>
