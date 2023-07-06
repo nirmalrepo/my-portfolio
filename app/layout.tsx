@@ -2,6 +2,7 @@
 import { Providers } from './providers'
 import NavBar from './components/NavBar'
 import { PageWrapper } from './page-wrapper'
+import { AnimatePresence } from 'framer-motion'
 
 export default function RootLayout({
   children,
@@ -14,7 +15,9 @@ export default function RootLayout({
       <body>
         <Providers>
           <NavBar />
-          <PageWrapper>{children}</PageWrapper>
+          <AnimatePresence mode="wait">
+            <PageWrapper>{children}</PageWrapper>
+          </AnimatePresence>
         </Providers>
       </body>
     </html>

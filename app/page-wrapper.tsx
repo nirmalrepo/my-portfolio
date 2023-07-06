@@ -12,18 +12,16 @@ const variants = {
 export const PageWrapper = ({ children }: { children: React.ReactNode }) => {
   const path = usePathname()
   return (
-    <AnimatePresence>
-      <motion.article
-        key={path}
-        initial="hidden"
-        animate="enter"
-        exit="exit"
-        variants={variants}
-        transition={{ duration: 0.4, type: 'easeInOut' }}
-        style={{ position: 'relative' }}
-      >
-        {children}
-      </motion.article>
-    </AnimatePresence>
+    <motion.article
+      key={path}
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+      variants={variants}
+      transition={{ duration: 0.4, type: 'easeInOut' }}
+      style={{ position: 'relative' }}
+    >
+      {children}
+    </motion.article>
   )
 }
