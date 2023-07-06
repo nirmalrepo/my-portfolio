@@ -1,15 +1,56 @@
-'use client'
-import Image from 'next/image'
-import { Link } from '@chakra-ui/next-js'
-import { Box, Container, Heading, Text } from '@chakra-ui/react'
+"use client";
+import NextImage from "next/image";
+import { Link } from "@chakra-ui/next-js";
+import {
+  Box,
+  Container,
+  Heading,
+  Text,
+  chakra,
+  theme,
+  useTheme,
+} from "@chakra-ui/react";
+
+const ProfileImage = chakra(NextImage, {
+  shouldForwardProp: (prop) => ["width", "height", "src", "alt"].includes(prop),
+});
 
 const Home: React.FC = () => {
+  const theme = useTheme();
   return (
     <Container maxW="container.md">
-      <Box display={{ md: 'flex' }} py={5}>
-        <Heading as="h2" variant="page-title">
-          Your Heading Here
-        </Heading>
+      <Box display={{ md: "flex" }} py={5} gap={8}>
+        <Box flexShrink={0}>
+          <Box
+            borderColor={"whiteAlpha.800"}
+            borderWidth={2}
+            borderStyle="solid"
+            w="150px"
+            h="150px"
+            display="inline-block"
+            borderRadius="full"
+            overflow="hidden"
+          >
+            <ProfileImage
+              src="/images/nirmal-profile.jpg"
+              alt="Profile Image"
+              borderRadius="full"
+              width="150"
+              height="150"
+            />
+          </Box>
+        </Box>
+        <Box flexGrow={1}>
+          <Heading as="h2" variant="page-title">
+            Nirmal Fernando{" "}
+            <Text as="span" fontSize="2xl" fontFamily={theme.fonts.sinhala}>
+              (නිර්මාල් ප්‍රනාන්දු)
+            </Text>
+          </Heading>
+          <Text>
+            Fullstack Web Develpoer ( Developer | Creative Coder | Home Chef )
+          </Text>
+        </Box>
       </Box>
       <Text>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at
@@ -93,6 +134,6 @@ const Home: React.FC = () => {
         finibus erat, quis fringilla dolor.
       </Text>
     </Container>
-  )
-}
-export default Home
+  );
+};
+export default Home;
