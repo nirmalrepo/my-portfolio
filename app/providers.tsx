@@ -45,6 +45,18 @@ const colors = {
     800: '#b266b2',
     900: '#a154a1',
   },
+  RosyBlush: {
+    50: '#f7dcd9',
+    100: '#f4cbc9',
+    200: '#f0b8b8',
+    300: '#eda7a8',
+    400: '#ea9698',
+    500: '#E7A0A2',
+    600: '#E7A0A2', // Original Color
+    700: '#e38e8d',
+    800: '#df7c7c',
+    900: '#dc6a6b',
+  },
   goldenGlow: {
     50: '#f7f7de',
     100: '#f1f0c4',
