@@ -16,7 +16,7 @@ import { M_PLUS_Rounded_1c, Noto_Sans_Sinhala } from 'next/font/google'
 const styles = {
   global: (props: StyleFunctionProps) => ({
     body: {
-      bg: mode('#ebeaa8', '#202023')(props),
+      bg: mode('#f1f0c4', '#202023')(props),
     },
   }),
 }
