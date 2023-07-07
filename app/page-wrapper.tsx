@@ -2,6 +2,7 @@
 import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 import path from 'path'
+import { Container } from '@chakra-ui/react'
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },
@@ -21,7 +22,9 @@ export const PageWrapper = ({ children }: { children: React.ReactNode }) => {
       transition={{ duration: 0.4, type: 'easeInOut' }}
       style={{ position: 'relative' }}
     >
-      {children}
+      <Container maxW="container.md" pt={20}>
+        {children}
+      </Container>
     </motion.article>
   )
 }

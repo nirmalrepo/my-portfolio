@@ -4,7 +4,7 @@ import { Box, Container, Heading, Text } from '@chakra-ui/react'
 
 const Work: React.FC = () => {
   return (
-    <Container maxW="container.md">
+    <>
       <Box display={{ md: 'flex' }} py={5}>
         <Heading as="h2" variant="page-title">
           Your Work Heading Here
@@ -91,7 +91,7 @@ const Work: React.FC = () => {
         sed, viverra quis turpis. Nunc interdum commodo ultrices. Nulla a
         finibus erat, quis fringilla dolor.
       </Text>
-    </Container>
+    </>
   )
 }
 export default Work

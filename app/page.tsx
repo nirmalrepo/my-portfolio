@@ -1,6 +1,6 @@
-"use client";
-import NextImage from "next/image";
-import { Link } from "@chakra-ui/next-js";
+'use client'
+import NextImage from 'next/image'
+import { Link } from '@chakra-ui/next-js'
 import {
   Box,
   Container,
@@ -9,20 +9,20 @@ import {
   chakra,
   theme,
   useTheme,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 
 const ProfileImage = chakra(NextImage, {
-  shouldForwardProp: (prop) => ["width", "height", "src", "alt"].includes(prop),
-});
+  shouldForwardProp: (prop) => ['width', 'height', 'src', 'alt'].includes(prop),
+})
 
 const Home: React.FC = () => {
-  const theme = useTheme();
+  const theme = useTheme()
   return (
-    <Container maxW="container.md">
-      <Box display={{ md: "flex" }} py={5} gap={8}>
+    <>
+      <Box display={{ md: 'flex' }} py={5} gap={8}>
         <Box flexShrink={0}>
           <Box
-            borderColor={"whiteAlpha.800"}
+            borderColor={'whiteAlpha.800'}
             borderWidth={2}
             borderStyle="solid"
             w="150px"
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
         </Box>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
-            Nirmal Fernando{" "}
+            Nirmal Fernando{' '}
             <Text as="span" fontSize="2xl" fontFamily={theme.fonts.sinhala}>
               (නිර්මාල් ප්‍රනාන්දු)
             </Text>
@@ -133,7 +133,7 @@ const Home: React.FC = () => {
         sed, viverra quis turpis. Nunc interdum commodo ultrices. Nulla a
         finibus erat, quis fringilla dolor.
       </Text>
-    </Container>
-  );
-};
-export default Home;
+    </>
+  )
+}
+export default Home

@@ -15,6 +15,7 @@ import {
   useColorModeValue,
   Stack,
   Container,
+  useTheme,
 } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
@@ -50,11 +51,20 @@ export const NavLink = forwardRef<HTMLAnchorElement, any>((props, ref) => (
 NavLink.displayName = 'NavLink'
 
 export default function NavBar() {
+  const theme = useTheme()
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box
+        position="fixed"
+        w="100%"
+        as="nav"
+        bg={useColorModeValue('#ffffff40', '#20202380')}
+        px={4}
+        css={{ backdropFilter: 'blur(10px)' }}
+        zIndex={2}
+      >
         <Container
           display="flex"
           h={16}
@@ -79,9 +89,13 @@ export default function NavBar() {
           </HStack>
           <HStack spacing={8} alignItems={'center'}>
             <Box>
-              <Button onClick={toggleColorMode}>
+              <IconButton
+                aria-label="Toggle theme mode"
+                colorScheme={useColorModeValue('seascape', 'goldenGlow')}
+                onClick={toggleColorMode}
+              >
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              </Button>
+              </IconButton>
             </Box>
 
             <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
