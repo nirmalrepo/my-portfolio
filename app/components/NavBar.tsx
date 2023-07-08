@@ -47,13 +47,14 @@ export const NavLink = forwardRef<HTMLAnchorElement, any>((props, ref) => {
   const pathname = usePathname();
   const isActive = pathname.toLowerCase() === props.href.toLowerCase();
   const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
+  const activeHoverColor = useColorModeValue("hotPink.500", "mint.500");
   return (
     <Link
       as={NextLink}
       href={`${props.href}`}
       ref={ref}
       {...props}
-      bg={isActive ? useColorModeValue("hotPink.500", "mint.500") : undefined}
+      bg={isActive ? activeHoverColor : undefined}
       px={4}
       py={2}
       rounded={"full"}
@@ -92,7 +93,7 @@ export default function NavBar() {
                 py={5}
                 alignItems="center"
               >
-                <Box
+                {/* <Box
                   w="30px"
                   h="30px"
                   display="none"
@@ -104,7 +105,7 @@ export default function NavBar() {
                     fill="true"
                     alt="Logo Image"
                   />
-                </Box>
+                </Box> */}
                 <Text
                   color={useColorModeValue("gray.800", "whiteAlpha.900")}
                   fontFamily={theme.fonts.heading}
