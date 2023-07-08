@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, forwardRef, Ref } from "react";
+import { ReactNode, forwardRef, Ref, useEffect, useState } from "react";
 import NextLink from "next/link";
 import NextImage from "next/image";
 import { usePathname } from "next/navigation";
@@ -20,7 +20,8 @@ import {
   chakra,
 } from "@chakra-ui/react";
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
-
+import useSoundEffect from "../hooks/useSoundEffect";
+import useSound from "use-sound";
 export interface NavItem {
   label: string;
   href: string;
@@ -48,6 +49,11 @@ export const NavLink = forwardRef<HTMLAnchorElement, any>((props, ref) => {
   const isActive = pathname.toLowerCase() === props.href.toLowerCase();
   const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
   const activeHoverColor = useColorModeValue("hotPink.500", "mint.500");
+  const soundUrl = "/sounds/camera-shutter-click.mp3";
+
+  const [play, { stop }] = useSound(soundUrl, { volume: 0.5 });
+
+  const [isHovering, setIsHovering] = useState(false);
   return (
     <Link
       as={NextLink}
@@ -59,6 +65,14 @@ export const NavLink = forwardRef<HTMLAnchorElement, any>((props, ref) => {
       py={2}
       rounded={"full"}
       color={isActive ? "#202023" : inactiveColor}
+      onMouseEnter={() => {
+        setIsHovering(true);
+        play();
+      }}
+      onMouseLeave={() => {
+        setIsHovering(false);
+        stop();
+      }}
     />
   );
 });
@@ -66,6 +80,11 @@ NavLink.displayName = "NavLink";
 
 export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
+  const [play] = useSound("sounds/switch-on.mp3");
+  const toggleColorModeWithSound = () => {
+    play(); // Play the sound effect
+    toggleColorMode(); // Toggle the color mode
+  };
   const theme = useTheme();
   return (
     <>
@@ -134,7 +153,7 @@ export default function NavBar() {
               <IconButton
                 aria-label="Toggle theme mode"
                 colorScheme={useColorModeValue("tiffanyBlue", "hotYellow")}
-                onClick={toggleColorMode}
+                onClick={toggleColorModeWithSound}
               >
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
               </IconButton>

@@ -1,13 +1,13 @@
-'use client'
-import { Providers } from './providers'
-import NavBar from './components/NavBar'
-import { PageWrapper } from './page-wrapper'
-import { AnimatePresence } from 'framer-motion'
+"use client";
+import { Providers } from "./providers";
+import NavBar from "./components/NavBar";
+import { PageWrapper } from "./page-wrapper";
+import { AnimatePresence } from "framer-motion";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -21,5 +21,5 @@ export default function RootLayout({
         </Providers>
       </body>
     </html>
-  )
+  );
 }
