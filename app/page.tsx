@@ -1,6 +1,6 @@
-"use client";
-import NextImage from "next/image";
-import { Link } from "@chakra-ui/next-js";
+'use client'
+import NextImage from 'next/image'
+import { Link } from '@chakra-ui/next-js'
 import {
   Box,
   Container,
@@ -9,20 +9,20 @@ import {
   chakra,
   theme,
   useTheme,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 
 const ProfileImage = chakra(NextImage, {
-  shouldForwardProp: (prop) => ["width", "height", "src", "alt"].includes(prop),
-});
+  shouldForwardProp: (prop) => ['width', 'height', 'src', 'alt'].includes(prop),
+})
 
 const Home: React.FC = () => {
-  const theme = useTheme();
+  const theme = useTheme()
   return (
     <>
-      <Box display={{ md: "flex" }} py={5} gap={8}>
+      <Box display={{ md: 'flex' }} py={5} gap={6}>
         <Box flexShrink={0}>
           <Box
-            borderColor={"whiteAlpha.800"}
+            borderColor={'whiteAlpha.800'}
             borderWidth={2}
             borderStyle="solid"
             w="120px"
@@ -42,98 +42,34 @@ const Home: React.FC = () => {
         </Box>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
-            Nirmal Fernando{" "}
-            <Text as="span" fontSize="2xl" fontFamily={theme.fonts.sinhala}>
+            Nirmal Fernando{' '}
+            <Text as="span" fontSize="xl" fontFamily={theme.fonts.sinhala}>
               (නිර්මාල් ප්‍රනාන්දු)
             </Text>
           </Heading>
           <Text>
-            Fullstack Web Develpoer ( Developer | Creative Coder | Home Chef )
+            Fullstack Developer ( Developer | Creative Coder | Home Chef )
           </Text>
         </Box>
       </Box>
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at
-        feugiat velit, sit amet malesuada risus. Fusce id elit ipsum. Nunc
-        ultricies auctor quam quis mattis. Proin sodales et lectus nec blandit.
-        Sed aliquet elit nulla, id ullamcorper augue semper in. Sed a vehicula
-        sapien, non elementum arcu. Proin urna massa, consequat ut consectetur
-        sed, cursus sed arcu. Cras ut erat sit amet dolor tincidunt pulvinar vel
-        non leo. Morbi imperdiet est leo, convallis interdum purus fermentum
-        vitae. In hendrerit vulputate nibh eu tempor. Integer mattis ante eu
-        lectus consequat, eget congue mi commodo. Sed dictum volutpat egestas.
-        Nam non dignissim lacus. Nullam dolor nulla, pretium convallis urna vel,
-        aliquet porttitor ante. Curabitur quam metus, tempor eget dui ut,
-        fringilla vulputate leo. Etiam gravida ac ligula eu ullamcorper. Fusce
-        id nunc consequat mauris sollicitudin mollis sed sit amet odio. Sed
-        venenatis nisl sit amet tortor pretium lacinia. Phasellus et ante
-        pharetra, cursus nisi vel, tincidunt lorem. Cras dapibus tellus vel
-        facilisis elementum. Proin eu orci in urna euismod vehicula. Aenean
-        massa ipsum, finibus at sem ac, egestas porta eros. Curabitur vel felis
-        dui. Praesent ac arcu at lacus venenatis condimentum in imperdiet felis.
-        Nulla facilisi. Phasellus sit amet commodo nisl, a gravida urna. Sed
-        dignissim neque mi, eget elementum felis ultricies ut. Aenean in rutrum
-        turpis. Mauris vitae odio a est convallis finibus a ac lectus. Nullam
-        tristique, ipsum vitae pulvinar hendrerit, nibh eros blandit sapien, a
-        porttitor turpis dui at sapien. Nunc felis massa, viverra non fringilla
-        sed, viverra quis turpis. Nunc interdum commodo ultrices. Nulla a
-        finibus erat, quis fringilla dolor.
-      </Text>
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at
-        feugiat velit, sit amet malesuada risus. Fusce id elit ipsum. Nunc
-        ultricies auctor quam quis mattis. Proin sodales et lectus nec blandit.
-        Sed aliquet elit nulla, id ullamcorper augue semper in. Sed a vehicula
-        sapien, non elementum arcu. Proin urna massa, consequat ut consectetur
-        sed, cursus sed arcu. Cras ut erat sit amet dolor tincidunt pulvinar vel
-        non leo. Morbi imperdiet est leo, convallis interdum purus fermentum
-        vitae. In hendrerit vulputate nibh eu tempor. Integer mattis ante eu
-        lectus consequat, eget congue mi commodo. Sed dictum volutpat egestas.
-        Nam non dignissim lacus. Nullam dolor nulla, pretium convallis urna vel,
-        aliquet porttitor ante. Curabitur quam metus, tempor eget dui ut,
-        fringilla vulputate leo. Etiam gravida ac ligula eu ullamcorper. Fusce
-        id nunc consequat mauris sollicitudin mollis sed sit amet odio. Sed
-        venenatis nisl sit amet tortor pretium lacinia. Phasellus et ante
-        pharetra, cursus nisi vel, tincidunt lorem. Cras dapibus tellus vel
-        facilisis elementum. Proin eu orci in urna euismod vehicula. Aenean
-        massa ipsum, finibus at sem ac, egestas porta eros. Curabitur vel felis
-        dui. Praesent ac arcu at lacus venenatis condimentum in imperdiet felis.
-        Nulla facilisi. Phasellus sit amet commodo nisl, a gravida urna. Sed
-        dignissim neque mi, eget elementum felis ultricies ut. Aenean in rutrum
-        turpis. Mauris vitae odio a est convallis finibus a ac lectus. Nullam
-        tristique, ipsum vitae pulvinar hendrerit, nibh eros blandit sapien, a
-        porttitor turpis dui at sapien. Nunc felis massa, viverra non fringilla
-        sed, viverra quis turpis. Nunc interdum commodo ultrices. Nulla a
-        finibus erat, quis fringilla dolor.
-      </Text>
-      <Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at
-        feugiat velit, sit amet malesuada risus. Fusce id elit ipsum. Nunc
-        ultricies auctor quam quis mattis. Proin sodales et lectus nec blandit.
-        Sed aliquet elit nulla, id ullamcorper augue semper in. Sed a vehicula
-        sapien, non elementum arcu. Proin urna massa, consequat ut consectetur
-        sed, cursus sed arcu. Cras ut erat sit amet dolor tincidunt pulvinar vel
-        non leo. Morbi imperdiet est leo, convallis interdum purus fermentum
-        vitae. In hendrerit vulputate nibh eu tempor. Integer mattis ante eu
-        lectus consequat, eget congue mi commodo. Sed dictum volutpat egestas.
-        Nam non dignissim lacus. Nullam dolor nulla, pretium convallis urna vel,
-        aliquet porttitor ante. Curabitur quam metus, tempor eget dui ut,
-        fringilla vulputate leo. Etiam gravida ac ligula eu ullamcorper. Fusce
-        id nunc consequat mauris sollicitudin mollis sed sit amet odio. Sed
-        venenatis nisl sit amet tortor pretium lacinia. Phasellus et ante
-        pharetra, cursus nisi vel, tincidunt lorem. Cras dapibus tellus vel
-        facilisis elementum. Proin eu orci in urna euismod vehicula. Aenean
-        massa ipsum, finibus at sem ac, egestas porta eros. Curabitur vel felis
-        dui. Praesent ac arcu at lacus venenatis condimentum in imperdiet felis.
-        Nulla facilisi. Phasellus sit amet commodo nisl, a gravida urna. Sed
-        dignissim neque mi, eget elementum felis ultricies ut. Aenean in rutrum
-        turpis. Mauris vitae odio a est convallis finibus a ac lectus. Nullam
-        tristique, ipsum vitae pulvinar hendrerit, nibh eros blandit sapien, a
-        porttitor turpis dui at sapien. Nunc felis massa, viverra non fringilla
-        sed, viverra quis turpis. Nunc interdum commodo ultrices. Nulla a
-        finibus erat, quis fringilla dolor.
-      </Text>
+      <Box>
+        <Heading as="h6" fontWeight="regular">
+          Intro
+        </Heading>
+        <Text>
+          Nirmal is a full-stack web developer based in Nelson NZ, with a
+          passion for creative coding and front-end development. Outside of his
+          work life, he finds joy in capturing the breathtaking landscapes of
+          New Zealand through his iPhone lens, skillfully editing them to
+          enhance their beauty. Additionally, Nirmal has a deep love for cooking
+          and enjoys experimenting with flavors and dishes. Currently, he is
+          working as a Senior Web Developer, utilizing his expertise to create
+          exceptional digital experiences. Join Nirmal on his journey as he
+          combines his technical skills, artistic vision, and culinary passions
+          to make a mark in the world of web development.
+        </Text>
+      </Box>
     </>
-  );
-};
-export default Home;
+  )
+}
+export default Home
