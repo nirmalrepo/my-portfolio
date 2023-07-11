@@ -1,13 +1,14 @@
-"use client";
-import { Providers } from "./providers";
-import NavBar from "./components/NavBar";
-import { PageWrapper } from "./page-wrapper";
-import { AnimatePresence } from "framer-motion";
+'use client'
+import { Providers } from './providers'
+import NavBar from './components/NavBar'
+import { PageWrapper } from './page-wrapper'
+import { AnimatePresence } from 'framer-motion'
+import DevVoxel from './components/DevVoxel'
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -15,11 +16,12 @@ export default function RootLayout({
       <body>
         <Providers>
           <NavBar />
+          <DevVoxel />
           <AnimatePresence mode="wait">
             <PageWrapper>{children}</PageWrapper>
           </AnimatePresence>
         </Providers>
       </body>
     </html>
-  );
+  )
 }
