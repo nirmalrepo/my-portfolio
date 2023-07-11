@@ -95,6 +95,7 @@ export default function NavBar() {
         px={4}
         css={{ backdropFilter: "blur(10px)" }}
         zIndex={2}
+        top={0}
       >
         <Container
           display="flex"
