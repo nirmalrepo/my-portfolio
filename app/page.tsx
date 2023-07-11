@@ -9,6 +9,7 @@ import {
   chakra,
   theme,
   useTheme,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import Timeline from './components/Timeline'
 import SocialMediaIcons from './components/SocialMediaIcons'
@@ -55,7 +56,12 @@ const Home: React.FC = () => {
           <SocialMediaIcons />
         </Box>
       </Box>
-      <Box p={4} mb={8} borderRadius="md" borderColor="#777777" borderWidth={1}>
+      <Box
+        p={4}
+        mb={8}
+        borderRadius="md"
+        backgroundColor={useColorModeValue('whiteAlpha.700', 'whiteAlpha.200')}
+      >
         <Heading as="h6" fontWeight="regular" variant="section-heading">
           Intro
         </Heading>
