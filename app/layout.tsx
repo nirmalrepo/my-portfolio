@@ -4,6 +4,7 @@ import NavBar from './components/NavBar'
 import { PageWrapper } from './page-wrapper'
 import { AnimatePresence } from 'framer-motion'
 import DevVoxel from './components/DevVoxel'
+import NextImage from 'next/image'
 
 export default function RootLayout({
   children,

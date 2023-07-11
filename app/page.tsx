@@ -1,6 +1,6 @@
-"use client";
-import NextImage from "next/image";
-import { Link } from "@chakra-ui/next-js";
+'use client'
+import NextImage from 'next/image'
+import { Link } from '@chakra-ui/next-js'
 import {
   Box,
   Container,
@@ -9,25 +9,26 @@ import {
   chakra,
   theme,
   useTheme,
-} from "@chakra-ui/react";
-import Timeline from "./components/Timeline";
+} from '@chakra-ui/react'
+import Timeline from './components/Timeline'
+import SocialMediaIcons from './components/SocialMediaIcons'
 
 const ProfileImage = chakra(NextImage, {
-  shouldForwardProp: (prop) => ["width", "height", "src", "alt"].includes(prop),
-});
+  shouldForwardProp: (prop) => ['width', 'height', 'src', 'alt'].includes(prop),
+})
 
 const Home: React.FC = () => {
-  const theme = useTheme();
+  const theme = useTheme()
   return (
     <>
-      <Box display={{ md: "flex" }} py={5} gap={6}>
+      <Box py={5} gap={6} display={{ md: 'flex' }}>
         <Box flexShrink={0}>
           <Box
-            borderColor={"whiteAlpha.800"}
+            borderColor={'whiteAlpha.800'}
             borderWidth={2}
             borderStyle="solid"
-            w="120px"
-            h="120px"
+            w="100px"
+            h="100px"
             display="inline-block"
             borderRadius="full"
             overflow="hidden"
@@ -36,14 +37,14 @@ const Home: React.FC = () => {
               src="/images/nirmal-profile.jpg"
               alt="Profile Image"
               borderRadius="full"
-              width="120"
-              height="120"
+              width={100}
+              height={100}
             />
           </Box>
         </Box>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
-            Nirmal Fernando{" "}
+            Nirmal Fernando{' '}
             <Text as="span" fontSize="xl" fontFamily={theme.fonts.sinhala}>
               (නිර්මාල් ප්‍රනාන්දු)
             </Text>
@@ -51,23 +52,24 @@ const Home: React.FC = () => {
           <Text>
             Fullstack Developer ( Developer | Creative Coder | Home Chef )
           </Text>
+          <SocialMediaIcons />
         </Box>
       </Box>
-      <Box mb={8}>
+      <Box p={4} mb={8} borderRadius="md" borderColor="#777777" borderWidth={1}>
         <Heading as="h6" fontWeight="regular" variant="section-heading">
           Intro
         </Heading>
         <Text>
           Nirmal is a full-stack web developer based in Nelson NZ, with a
-          passion for creative coding and front-end development. Outside of his
-          work life, he finds joy in capturing the breathtaking landscapes of
-          New Zealand through his iPhone lens, skillfully editing them to
-          enhance their beauty. Additionally, Nirmal has a deep love for cooking
-          and enjoys experimenting with flavors and dishes. Currently, he is
-          working as a Senior Web Developer, utilizing his expertise to create
-          exceptional digital experiences. Join Nirmal on his journey as he
-          combines his technical skills, artistic vision, and culinary passions
-          to make a mark in the world of web development.
+          passion for creative coding and front-end development. Currently, he
+          is working as a Senior Web Developer, utilizing his expertise to
+          create exceptional digital experiences. Outside of his work life, he
+          finds joy in capturing the breathtaking landscapes of New Zealand
+          through his iPhone lens, skillfully editing them to enhance their
+          beauty. Additionally, Nirmal has a deep love for cooking and enjoys
+          experimenting with flavors and dishes. Join Nirmal on his journey as
+          he combines his technical skills, artistic vision, and culinary
+          passions to make a mark in the world of web development.
         </Text>
       </Box>
       <Box mb={8}>
@@ -77,6 +79,6 @@ const Home: React.FC = () => {
         <Timeline />
       </Box>
     </>
-  );
-};
-export default Home;
+  )
+}
+export default Home
