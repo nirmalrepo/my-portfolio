@@ -1,15 +1,12 @@
+import { FC, forwardRef, ReactNode, useImperativeHandle, useRef } from 'react'
 import {
-  FC,
-  forwardRef,
-  ReactNode,
-  useImperativeHandle,
-  useRef,
-  Ref,
-  Suspense,
-} from 'react'
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
-import { Three } from '@/app/helpers/Three'
-import { Color } from 'three'
+  OrbitControls,
+  OrthographicCamera,
+  PerspectiveCamera,
+  Preload,
+  View as ViewImpl,
+} from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 
 interface ViewProps {
   children: ReactNode
@@ -30,11 +27,24 @@ const View: FC<ViewProps> = forwardRef<ViewRef, ViewProps>(
     return (
       <>
         <div ref={localRef} {...props} />
-        <Three>
+        <Canvas>
           <PerspectiveCamera makeDefault position={[0, 0, 5]} />
+          <ambientLight intensity={1} color={'#cccccc'} />
           {children}
-          {orbit && <OrbitControls />}
-        </Three>
+          {orbit && <OrbitControls autoRotate />}
+          <OrthographicCamera
+            // zoom={100}
+            top={200}
+            bottom={-200}
+            left={200}
+            right={-200}
+            near={1}
+            far={2000}
+            position={[0, 0, 200]}
+          />
+
+          <Preload all />
+        </Canvas>
       </>
     )
   }
@@ -43,18 +53,3 @@ const View: FC<ViewProps> = forwardRef<ViewRef, ViewProps>(
 View.displayName = 'View'
 
 export { View }
-interface CommonProps {
-  color?: [number, number, number] | undefined
-}
-
-export const Common: FC<CommonProps> = ({ color }) => (
-  <Suspense fallback={null}>
-    {color && (
-      <color attach="background" args={color as [number, number, number]} />
-    )}
-    <ambientLight intensity={0.5} />
-    <pointLight position={[20, 30, 10]} intensity={1} />
-    <pointLight position={[-10, -10, -10]} color="blue" />
-    <PerspectiveCamera makeDefault fov={40} position={[0, 0, 6]} />
-  </Suspense>
-)

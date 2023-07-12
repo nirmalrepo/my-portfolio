@@ -3,35 +3,32 @@
 import { Suspense } from 'react'
 import dynamic from 'next/dynamic'
 import { Box } from '@chakra-ui/react'
-import { Canvas } from '@react-three/fiber'
-import { useLoader } from '@react-three/fiber'
-import {
-  OrbitControls,
-  useGLTF,
-  Environment,
-  OrthographicCamera,
-} from '@react-three/drei'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import DevModel from './DevModel'
-const Model = () => {
-  const gltf = useLoader(GLTFLoader, '/developer-latest.glb')
+import { Html, useProgress } from '@react-three/drei'
+// import { View } from '@/app/components/canvas/View'
+// import { Model } from '@/app/components/canvas/Model'
+function Loader() {
+  const { progress } = useProgress()
   return (
-    <>
-      <primitive object={gltf.scene} scale={0.8} />
-    </>
+    <Html center>
+      <div className="here">{progress} % loaded</div>
+    </Html>
   )
 }
+
+const VoxModel = dynamic(
+  () => import('@/app/components/canvas/Model').then((mod) => mod.Model),
+  {
+    ssr: false,
+    loading: Loader,
+  }
+)
 const View = dynamic(
   () => import('@/app/components/canvas/View').then((mod) => mod.View),
   {
     ssr: false,
-    loading: () => <p>Loading</p>,
   }
 )
-const Common = dynamic(
-  () => import('@/app/components/canvas/View').then((mod) => mod.Common),
-  { ssr: false }
-)
+
 const DevVoxel = () => {
   return (
     <>
@@ -44,24 +41,11 @@ const DevVoxel = () => {
         h={[280, 480, 640]}
         position="relative"
       >
-        <Canvas>
+        <View orbit>
           <Suspense fallback={null}>
-            <ambientLight intensity={1} color={'#cccccc'} />
-            <Model />
-            <OrbitControls autoRotate />
-            <OrthographicCamera
-              // zoom={100}
-              top={200}
-              bottom={-200}
-              left={200}
-              right={-200}
-              near={1}
-              far={2000}
-              position={[0, 0, 200]}
-            />
-            {/* <Environment preset="sunset" /> */}
+            <VoxModel />
           </Suspense>
-        </Canvas>
+        </View>
       </Box>
     </>
   )
