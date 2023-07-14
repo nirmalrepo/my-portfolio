@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import { Suspense } from "react";
-import dynamic from "next/dynamic";
-import { Box } from "@chakra-ui/react";
-import { Html, useProgress } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+import { Suspense } from 'react'
+import dynamic from 'next/dynamic'
+import { Box } from '@chakra-ui/react'
+import { Html, useProgress } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 function Loader() {
-  const { progress } = useProgress();
+  const { progress } = useProgress()
   return (
     <Html center>
       <div className="here">
@@ -37,23 +37,23 @@ function Loader() {
         Loading
       </div>
     </Html>
-  );
+  )
 }
 
 const VoxModel = dynamic(
-  () => import("@/app/components/canvas/Model").then((mod) => mod.Model),
+  () => import('@/app/components/canvas/Model').then((mod) => mod.Model),
   {
     ssr: false,
     loading: Loader,
   }
-);
+)
 const View = dynamic(
-  () => import("@/app/components/canvas/View").then((mod) => mod.View),
+  () => import('@/app/components/canvas/View').then((mod) => mod.View),
   {
     ssr: false,
     loading: Loader,
   }
-);
+)
 
 const DevVoxel = () => {
   return (
@@ -61,8 +61,8 @@ const DevVoxel = () => {
       <Box
         className="voxel-dog"
         m="auto"
-        mt={["120px", "120px", "60px"]}
-        mb={["-160px", "-300px", "-300px"]}
+        mt={['120px', '120px', '20px']}
+        mb={['-160px', '-300px', '-280px']}
         w={[280, 480, 640]}
         h={[280, 480, 640]}
         position="relative"
@@ -72,7 +72,7 @@ const DevVoxel = () => {
         </Canvas>
       </Box>
     </>
-  );
-};
+  )
+}
 
-export default DevVoxel;
+export default DevVoxel

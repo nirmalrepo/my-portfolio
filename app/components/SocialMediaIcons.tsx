@@ -16,7 +16,7 @@ const SocialMediaIcons = () => {
           <IconButton
             aria-label={item.icon.name}
             icon={<item.icon />}
-            size="md"
+            size="sm"
             variant="outline"
           />
         </Link>

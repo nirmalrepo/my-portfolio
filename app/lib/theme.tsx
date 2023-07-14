@@ -17,12 +17,8 @@ const components = {
   Heading: {
     variants: {
       'section-heading': {
-        fontSize: '3xl',
-        textDecoration: 'underline solid',
-        WebkitTextDecoration: 'underline solid',
-        textUnderlineOffset: 6,
-        textDecorationColor: '#777777',
-        marginBottom: 4,
+        fontSize: '2xl',
+        marginBottom: 3,
       },
     },
   },

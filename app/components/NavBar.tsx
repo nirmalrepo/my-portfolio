@@ -22,6 +22,7 @@ import {
 import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
 import useSoundEffect from '../hooks/useSoundEffect'
 import useSound from 'use-sound'
+import GreetingText from './GreetingText'
 export interface NavItem {
   label: string
   href: string
@@ -82,8 +83,8 @@ export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode()
   const [play] = useSound('sounds/switch-on.mp3')
   const toggleColorModeWithSound = () => {
-    play() // Play the sound effect
-    toggleColorMode() // Toggle the color mode
+    play()
+    toggleColorMode()
   }
   const theme = useTheme()
   return (
@@ -134,6 +135,7 @@ export default function NavBar() {
                 >
                   Nirmal Fernando
                 </Text>
+                <GreetingText />
               </Box>
             </NextLink>
           </HStack>

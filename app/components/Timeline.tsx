@@ -26,7 +26,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         />
       </Box>
     </Box>
-    <VStack align="start" ml={3} spacing={2}>
+    <VStack align="start" ml={3} spacing={0}>
       <Text fontWeight="bold" fontFamily={theme.fonts.heading}>
         {year}
       </Text>
@@ -39,7 +39,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         left="15px"
         w="2px"
         h="50%"
-        bg="#3d3d3d"
+        bg="#2f2e2e"
       />
     )}
   </Flex>
