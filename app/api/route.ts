@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 export async function GET(request: Request) {
-  console.log(request)
+  const xHelloMiddleware1 = request.headers.get('x-hello-from-middleware1')
   let json_response = {
     status: 'success',
-    request: request,
+    request: xHelloMiddleware1,
   }
   return NextResponse.json(json_response)
 }
