@@ -104,7 +104,7 @@ export default function NavBar() {
           alignItems={'center'}
           justifyContent={'space-between'}
           mx="auto"
-          maxW="container.md"
+          maxW="800px"
         >
           <HStack spacing={8} alignItems={'center'}>
             <NextLink href="/" scroll={false}>
@@ -142,7 +142,7 @@ export default function NavBar() {
           <HStack spacing={{ md: '8' }} alignItems={'center'}>
             <HStack
               as={'nav'}
-              spacing={4}
+              spacing={2}
               display={{ base: 'none', md: 'flex' }}
             >
               {Links.map((link) => (
