@@ -93,7 +93,7 @@ export default function NavBar() {
         position="fixed"
         w="100%"
         bg={useColorModeValue('#ffffff40', '#20202380')}
-        px={4}
+        px={2}
         css={{ backdropFilter: 'blur(10px)' }}
         zIndex={2}
         top={0}
@@ -131,7 +131,7 @@ export default function NavBar() {
                   color={useColorModeValue('gray.800', 'whiteAlpha.900')}
                   fontFamily={theme.fonts.heading}
                   fontWeight="bold"
-                  ml={3}
+                  ml={{ base: 0, md: '3' }}
                 >
                   Nirmal Fernando
                 </Text>

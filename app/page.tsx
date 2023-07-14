@@ -57,7 +57,7 @@ const Home: React.FC = () => {
         </Box>
       </Box>
       <Box
-        p={8}
+        p={6}
         mb={8}
         borderRadius="md"
         backgroundColor={useColorModeValue('whiteAlpha.700', 'whiteAlpha.200')}

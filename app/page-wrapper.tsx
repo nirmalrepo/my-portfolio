@@ -22,7 +22,7 @@ export const PageWrapper = ({ children }: { children: React.ReactNode }) => {
       transition={{ duration: 0.4, type: 'easeInOut' }}
       style={{ position: 'relative' }}
     >
-      <Container maxW="container.sm" pt={20}>
+      <Container maxW="container.sm" pt={20} px={5}>
         {children}
       </Container>
     </motion.article>

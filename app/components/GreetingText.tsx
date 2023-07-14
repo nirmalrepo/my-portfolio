@@ -44,8 +44,8 @@ const GreetingText = () => {
       style={{ display: isLoading ? 'none' : 'block' }} // Hide the div when loading
     >
       <Text
-        ml={2}
-        fontSize="xs"
+        ml={{ base: 0, md: '3' }}
+        fontSize={{ base: '10px', md: 'sm' }}
         color={useColorModeValue('tiffanyBlue.900', 'hotYellow.500')}
       >
         {getGreeting(country)}

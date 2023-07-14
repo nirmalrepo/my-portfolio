@@ -19,6 +19,7 @@ const components = {
       'section-heading': {
         fontSize: '2xl',
         marginBottom: 3,
+        letterSpacing: '1px',
       },
     },
   },
