@@ -1,25 +1,10 @@
 import React, { useRef, useState } from "react";
-import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 
-function easeOutCirc(x) {
-  return Math.sqrt(1 - Math.pow(x - 1, 4));
-}
-
-export function Model(props) {
+const Model = (props) => {
   const groupRef = useRef();
   const { nodes, materials } = useGLTF("/dev.glb");
-  const [frame, setFrame] = useState(0);
-  //   const rotationSpeed = 1000;
 
-  //   useFrame(() => {
-  //     // Rotate the model on the first 100 frames
-  //     if (frame <= 100) {
-  //       const rotationSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
-  //       groupRef.current.rotation.y += rotationSpeed;
-  //       setFrame(frame + 1);
-  //     }
-  //   });
   return (
     <group ref={groupRef} {...props} dispose={null}>
       <mesh
@@ -40,6 +25,9 @@ export function Model(props) {
       />
     </group>
   );
-}
+};
 
+Model.displayName = "Model";
+
+export { Model };
 useGLTF.preload("/dev.glb");
