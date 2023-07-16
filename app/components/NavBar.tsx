@@ -22,7 +22,7 @@ import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import useHoverSoundEffect from "../hooks/useHoverSoundEffect";
 import useSound from "use-sound";
 import GreetingText from "./GreetingText";
-import LinkWithHoverSound from "./LinkWithHoverSound";
+import { LinkWithHoverSound } from "./LinkWithHoverSound";
 export interface NavItem {
   label: string;
   href: string;
