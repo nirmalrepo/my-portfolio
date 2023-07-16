@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, forwardRef, Ref, useEffect, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import NextLink from "next/link";
 import NextImage from "next/image";
 import { usePathname } from "next/navigation";
@@ -9,7 +9,6 @@ import {
   HStack,
   IconButton,
   Menu,
-  Link,
   MenuButton,
   MenuList,
   MenuItem,
@@ -20,9 +19,10 @@ import {
   chakra,
 } from "@chakra-ui/react";
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
-import useSoundEffect from "../hooks/useSoundEffect";
+import useHoverSoundEffect from "../hooks/useHoverSoundEffect";
 import useSound from "use-sound";
 import GreetingText from "./GreetingText";
+import LinkWithHoverSound from "./LinkWithHoverSound";
 export interface NavItem {
   label: string;
   href: string;
@@ -54,13 +54,9 @@ export const NavLink = forwardRef<HTMLAnchorElement, any>((props, ref) => {
     "papayaWhip.100"
   );
   const activeHoverTextColor = useColorModeValue("whiteAlpha.900", "gray.800");
-  const soundUrl = "/sounds/camera-shutter-click.mp3";
-
-  const [play, { stop }] = useSound(soundUrl, { volume: 0.5 });
-
-  const [isHovering, setIsHovering] = useState(false);
+  const { handleMouseEnter, handleMouseLeave } = useHoverSoundEffect();
   return (
-    <Link
+    <LinkWithHoverSound
       as={NextLink}
       href={`${props.href}`}
       ref={ref}
@@ -70,14 +66,6 @@ export const NavLink = forwardRef<HTMLAnchorElement, any>((props, ref) => {
       py={2}
       rounded={"full"}
       color={isActive ? activeHoverTextColor : inactiveColor}
-      onMouseEnter={() => {
-        setIsHovering(true);
-        play();
-      }}
-      onMouseLeave={() => {
-        setIsHovering(false);
-        stop();
-      }}
     />
   );
 });
@@ -121,12 +109,11 @@ export default function NavBar() {
                 {/* <Box
                   w="30px"
                   h="30px"
-                  display="none"
                   overflow="hidden"
                   position="relative"
                 >
                   <LogoImage
-                    src="/images/logo.png"
+                    src="/images/Logo.png"
                     fill="true"
                     alt="Logo Image"
                   />

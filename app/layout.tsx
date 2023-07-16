@@ -1,15 +1,19 @@
-'use client'
-import { Providers } from './providers'
-import NavBar from './components/NavBar'
-import { PageWrapper } from './page-wrapper'
-import { AnimatePresence } from 'framer-motion'
-import DevVoxel from './components/DevVoxel'
-import NextImage from 'next/image'
+// "use client";
+import { Providers } from "./providers";
+import NavBar from "./components/NavBar";
+import DevVoxel from "./components/canvas/DevVoxel";
+import { AnimatePresenceWrapper } from "./components/wrappers/animate-presence-wrapper";
+
+export const metadata = {
+  title:
+    "Nirmal Fernando | Fullstack Web Developer, Based in Nelson, New Zealand",
+  description: "Fullstack Web Developer, Based in Nelson, New Zealand",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -18,11 +22,9 @@ export default function RootLayout({
         <Providers>
           <NavBar />
           <DevVoxel />
-          <AnimatePresence mode="wait">
-            <PageWrapper>{children}</PageWrapper>
-          </AnimatePresence>
+          <AnimatePresenceWrapper>{children}</AnimatePresenceWrapper>
         </Providers>
       </body>
     </html>
-  )
+  );
 }

@@ -1,5 +1,6 @@
 import { IconButton, Link, HStack } from "@chakra-ui/react";
 import { FaLinkedin, FaInstagram, FaGithub, FaEnvelope } from "react-icons/fa";
+import LinkWithHoverSound from "./LinkWithHoverSound";
 
 const SocialMediaIcons = () => {
   const socialMediaData = [
@@ -12,14 +13,14 @@ const SocialMediaIcons = () => {
   return (
     <HStack spacing={2} my={4}>
       {socialMediaData.map((item, index) => (
-        <Link key={index} href={item.link} isExternal>
+        <LinkWithHoverSound key={index} href={item.link} isExternal>
           <IconButton
             aria-label={item.icon.name}
             icon={<item.icon />}
             size="sm"
             variant="outline"
           />
-        </Link>
+        </LinkWithHoverSound>
       ))}
     </HStack>
   );

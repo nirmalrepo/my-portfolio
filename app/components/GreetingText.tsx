@@ -40,7 +40,7 @@ const GreetingText = () => {
       initial={{ y: -10, opacity: 0 }}
       animate={controls}
       transition={{ duration: 0.8 }}
-      style={{ display: isLoading ? "none" : "block" }} // Hide the div when loading
+      style={{ display: isLoading ? "none" : "block" }}
     >
       <Text
         ml={{ base: 0, md: "3" }}

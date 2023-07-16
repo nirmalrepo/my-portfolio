@@ -29,7 +29,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/components/canvas/ModelJ.jsx",
-    "app/components/canvas/Model2.jsx"
+    "app/components/canvas/Model.jsx"
   ],
   "exclude": ["node_modules"]
 }
