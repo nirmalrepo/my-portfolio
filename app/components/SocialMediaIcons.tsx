@@ -1,13 +1,13 @@
-import { IconButton, Link, HStack } from '@chakra-ui/react'
-import { FaLinkedin, FaInstagram, FaGithub, FaEnvelope } from 'react-icons/fa'
+import { IconButton, Link, HStack } from "@chakra-ui/react";
+import { FaLinkedin, FaInstagram, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const SocialMediaIcons = () => {
   const socialMediaData = [
-    { icon: FaLinkedin, link: 'https://www.linkedin.com/in/your-profile' },
-    { icon: FaInstagram, link: 'https://www.instagram.com/your-profile' },
-    { icon: FaGithub, link: 'https://www.github.com/your-profile' },
-    { icon: FaEnvelope, link: 'mailto:youremail@example.com' },
-  ]
+    { icon: FaLinkedin, link: "https://www.linkedin.com/in/nirmal-fdo/" },
+    { icon: FaInstagram, link: "https://www.instagram.com/stories.of.nirmal/" },
+    { icon: FaGithub, link: "https://github.com/nirmalrepo" },
+    { icon: FaEnvelope, link: "mailto:w.v.nirmalfernando@gmail.com" },
+  ];
 
   return (
     <HStack spacing={2} my={4}>
@@ -22,7 +22,7 @@ const SocialMediaIcons = () => {
         </Link>
       ))}
     </HStack>
-  )
-}
+  );
+};
 
-export default SocialMediaIcons
+export default SocialMediaIcons;

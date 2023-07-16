@@ -1,6 +1,6 @@
-'use client'
-import NextImage from 'next/image'
-import { Link } from '@chakra-ui/next-js'
+"use client";
+import NextImage from "next/image";
+import { Link } from "@chakra-ui/next-js";
 import {
   Box,
   Container,
@@ -10,22 +10,22 @@ import {
   theme,
   useTheme,
   useColorModeValue,
-} from '@chakra-ui/react'
-import Timeline from './components/Timeline'
-import SocialMediaIcons from './components/SocialMediaIcons'
+} from "@chakra-ui/react";
+import Timeline from "./components/Timeline";
+import SocialMediaIcons from "./components/SocialMediaIcons";
 
 const ProfileImage = chakra(NextImage, {
-  shouldForwardProp: (prop) => ['width', 'height', 'src', 'alt'].includes(prop),
-})
+  shouldForwardProp: (prop) => ["width", "height", "src", "alt"].includes(prop),
+});
 
 const Home: React.FC = () => {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
     <>
-      <Box py={5} gap={6} display={{ md: 'flex' }}>
+      <Box py={5} gap={6} display={{ md: "flex" }}>
         <Box flexShrink={0}>
           <Box
-            borderColor={'whiteAlpha.800'}
+            borderColor={"whiteAlpha.800"}
             borderWidth={2}
             borderStyle="solid"
             w="100px"
@@ -45,7 +45,7 @@ const Home: React.FC = () => {
         </Box>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
-            Nirmal Fernando{' '}
+            Nirmal Fernando{" "}
             <Text as="span" fontSize="xl" fontFamily={theme.fonts.sinhala}>
               (නිර්මාල් ප්‍රනාන්දු)
             </Text>
@@ -60,9 +60,9 @@ const Home: React.FC = () => {
         p={6}
         mb={8}
         borderRadius="md"
-        backgroundColor={useColorModeValue('whiteAlpha.700', 'whiteAlpha.200')}
+        backgroundColor={useColorModeValue("whiteAlpha.700", "whiteAlpha.200")}
       >
-        <Heading as="h6" fontWeight="regular" variant="section-heading">
+        <Heading as="h6" fontWeight="bold" variant="section-heading">
           Intro
         </Heading>
         <Text>
@@ -79,12 +79,12 @@ const Home: React.FC = () => {
         </Text>
       </Box>
       <Box mb={8}>
-        <Heading as="h6" fontWeight="regular" variant="section-heading">
+        <Heading as="h6" fontWeight="bold" variant="section-heading">
           Timeline
         </Heading>
         <Timeline />
       </Box>
     </>
-  )
-}
-export default Home
+  );
+};
+export default Home;
