@@ -1,13 +1,12 @@
-import { MoonIcon } from "@chakra-ui/icons";
-import { Box, Flex, Icon, Text, VStack } from "@chakra-ui/react";
-import Image from "next/image";
-// import { FaCircle, FaRegCircle } from "react-icons/fa";
-
+import { MoonIcon } from '@chakra-ui/icons'
+import { Box, Flex, Icon, Text, VStack } from '@chakra-ui/react'
+import Image from 'next/image'
+import theme from '../lib/theme'
 interface TimelineItemProps {
-  year: string;
-  description: string;
-  imageName: string; // New prop for the image name
-  isLast?: boolean;
+  year: string
+  description: string
+  imageName: string // New prop for the image name
+  isLast?: boolean
 }
 
 const TimelineItem: React.FC<TimelineItemProps> = ({
@@ -18,7 +17,6 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
 }) => (
   <Flex align="start" position="relative">
     <Box mt={1}>
-      {/* <MoonIcon /> */}
       <Box w="30px" h="30px">
         <Image
           src={`/images/icons/${imageName}.png`} // Using the image name prop in the image source
@@ -28,8 +26,10 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         />
       </Box>
     </Box>
-    <VStack align="start" ml={3} spacing={2}>
-      <Text fontWeight="bold">{year}</Text>
+    <VStack align="start" ml={3} spacing={0}>
+      <Text fontWeight="bold" fontFamily={theme.fonts.heading}>
+        {year}
+      </Text>
       <Text fontSize="sm">{description}</Text>
     </VStack>
     {!isLast && (
@@ -39,11 +39,11 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         left="15px"
         w="2px"
         h="50%"
-        bg="#3d3d3d"
+        bg="#2f2e2e"
       />
     )}
   </Flex>
-);
+)
 
 const Timeline: React.FC = () => (
   <VStack spacing={4} align="start">
@@ -99,6 +99,6 @@ const Timeline: React.FC = () => (
       isLast
     />
   </VStack>
-);
+)
 
-export default Timeline;
+export default Timeline

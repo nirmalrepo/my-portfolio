@@ -9,7 +9,7 @@ const config = {
 const styles = {
   global: (props: StyleFunctionProps) => ({
     body: {
-      bg: mode("#fbe7c6", "#202023")(props),
+      bg: mode("#ffecd1", "#001524")(props),
     },
   }),
 };
@@ -17,29 +17,25 @@ const components = {
   Heading: {
     variants: {
       "section-heading": {
-        fontSize: "3xl",
-        textDecoration: "underline solid",
-        WebkitTextDecoration: "underline solid",
-        textUnderlineOffset: 6,
-        textDecorationColor: "#777777",
-        marginBottom: 4,
-        marginTop: 3,
+        fontSize: "2xl",
+        marginBottom: 3,
+        letterSpacing: "1px",
       },
     },
   },
 };
 const colors = {
-  hotYellow: {
-    50: "#faf3e5",
-    100: "#f6e6cb",
-    200: "#f3d8b1",
-    300: "#efcba7",
-    400: "#ecbd8e",
-    500: "#fbe7c6",
-    600: "#e4a979",
-    700: "#ce8d61",
-    800: "#b7754a",
-    900: "#a05e33",
+  hotOrange: {
+    50: "#FFB570",
+    100: "#FFAB5C",
+    200: "#FFA047",
+    300: "#ff9633",
+    400: "#FF8B1F",
+    500: "#ff7d00",
+    600: "#F57600",
+    700: "#E06C00",
+    800: "#CC6300",
+    900: "#B85900",
   },
   mint: {
     50: "#e5f9ee",
@@ -53,17 +49,17 @@ const colors = {
     800: "#3fa071",
     900: "#2f8549",
   },
-  tiffanyBlue: {
-    50: "#e1f3f4",
-    100: "#c3e7e9",
-    200: "#a6dbde",
-    300: "#88cfd2",
-    400: "#6bc3c6",
-    500: "#a0e7e5",
-    600: "#5abebd",
-    700: "#4ca7a6",
-    800: "#3e908f",
-    900: "#317978",
+  caribbeanCurrent: {
+    50: "#27B7CE",
+    100: "#24A8BC",
+    200: "#2199AB",
+    300: "#1d8a9a",
+    400: "#1a7a89",
+    500: "#15616D",
+    600: "#145c67",
+    700: "#104C56",
+    800: "#0d3d45",
+    900: "#0a2e33",
   },
   hotPink: {
     50: "#ffe6e9",
@@ -76,6 +72,18 @@ const colors = {
     700: "#ca6d7e",
     800: "#ae4c5f",
     900: "#923c4f",
+  },
+  papayaWhip: {
+    50: "#FFF7EB",
+    100: "#FFECD1",
+    200: "#FFE6C2",
+    300: "#FFDDAD",
+    400: "#FFD599",
+    500: "#FFCC85",
+    600: "#FFC370",
+    700: "#FFBB5C",
+    800: "#FFB347",
+    900: "#FFAA33",
   },
 };
 const Nunito_Font = Nunito({

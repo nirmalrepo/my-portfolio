@@ -22,6 +22,7 @@ import {
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import useSoundEffect from "../hooks/useSoundEffect";
 import useSound from "use-sound";
+import GreetingText from "./GreetingText";
 export interface NavItem {
   label: string;
   href: string;
@@ -33,12 +34,12 @@ export const Links: NavItem[] = [
     href: "/work",
   },
   {
-    label: "Hobbies",
-    href: "/hobbies",
+    label: "Blog",
+    href: "/blog",
   },
   {
-    label: "Contact",
-    href: "/contact",
+    label: "Hobbies",
+    href: "/hobbies",
   },
 ];
 const LogoImage = chakra(NextImage, {
@@ -48,7 +49,11 @@ export const NavLink = forwardRef<HTMLAnchorElement, any>((props, ref) => {
   const pathname = usePathname();
   const isActive = pathname.toLowerCase() === props.href.toLowerCase();
   const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
-  const activeHoverColor = useColorModeValue("hotPink.500", "mint.500");
+  const activeHoverBgColor = useColorModeValue(
+    "hotOrange.500",
+    "papayaWhip.100"
+  );
+  const activeHoverTextColor = useColorModeValue("whiteAlpha.900", "gray.800");
   const soundUrl = "/sounds/camera-shutter-click.mp3";
 
   const [play, { stop }] = useSound(soundUrl, { volume: 0.5 });
@@ -60,11 +65,11 @@ export const NavLink = forwardRef<HTMLAnchorElement, any>((props, ref) => {
       href={`${props.href}`}
       ref={ref}
       {...props}
-      bg={isActive ? activeHoverColor : undefined}
+      bg={isActive ? activeHoverBgColor : undefined}
       px={4}
       py={2}
       rounded={"full"}
-      color={isActive ? "#202023" : inactiveColor}
+      color={isActive ? activeHoverTextColor : inactiveColor}
       onMouseEnter={() => {
         setIsHovering(true);
         play();
@@ -82,8 +87,8 @@ export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const [play] = useSound("sounds/switch-on.mp3");
   const toggleColorModeWithSound = () => {
-    play(); // Play the sound effect
-    toggleColorMode(); // Toggle the color mode
+    play();
+    toggleColorMode();
   };
   const theme = useTheme();
   return (
@@ -91,10 +96,11 @@ export default function NavBar() {
       <Box
         position="fixed"
         w="100%"
-        bg={useColorModeValue("#ffffff40", "#20202380")}
-        px={4}
+        bg={useColorModeValue("#ffecd140", "#00152480")}
+        px={2}
         css={{ backdropFilter: "blur(10px)" }}
         zIndex={2}
+        top={0}
       >
         <Container
           display="flex"
@@ -102,7 +108,7 @@ export default function NavBar() {
           alignItems={"center"}
           justifyContent={"space-between"}
           mx="auto"
-          maxW="container.md"
+          maxW="800px"
         >
           <HStack spacing={8} alignItems={"center"}>
             <NextLink href="/" scroll={false}>
@@ -129,16 +135,18 @@ export default function NavBar() {
                   color={useColorModeValue("gray.800", "whiteAlpha.900")}
                   fontFamily={theme.fonts.heading}
                   fontWeight="bold"
-                  ml={3}
+                  ml={{ base: 0, md: "3" }}
                 >
                   Nirmal Fernando
                 </Text>
+                <GreetingText />
               </Box>
             </NextLink>
-
+          </HStack>
+          <HStack spacing={{ md: "8" }} alignItems={"center"}>
             <HStack
               as={"nav"}
-              spacing={4}
+              spacing={2}
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
@@ -147,12 +155,10 @@ export default function NavBar() {
                 </NavLink>
               ))}
             </HStack>
-          </HStack>
-          <HStack spacing={{ md: "8" }} alignItems={"center"}>
             <Box>
               <IconButton
                 aria-label="Toggle theme mode"
-                colorScheme={useColorModeValue("tiffanyBlue", "hotYellow")}
+                colorScheme={useColorModeValue("caribbeanCurrent", "hotOrange")}
                 onClick={toggleColorModeWithSound}
               >
                 {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
