@@ -13,6 +13,6 @@ const LinkWithHoverSound = forwardRef<HTMLAnchorElement, any>((props, ref) => {
   );
 });
 
-LinkWithHoverSound.displayName = "View";
+LinkWithHoverSound.displayName = "LinkWithHoverSound";
 
-export { LinkWithHoverSound };
+export default LinkWithHoverSound;

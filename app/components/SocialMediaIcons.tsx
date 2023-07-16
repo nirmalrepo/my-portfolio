@@ -1,6 +1,6 @@
 import { IconButton, Link, HStack } from "@chakra-ui/react";
 import { FaLinkedin, FaInstagram, FaGithub, FaEnvelope } from "react-icons/fa";
-import { LinkWithHoverSound } from "./LinkWithHoverSound";
+import LinkWithHoverSound from "./LinkWithHoverSound";
 
 const SocialMediaIcons = () => {
   const socialMediaData = [
