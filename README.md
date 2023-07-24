@@ -7,15 +7,6 @@
 
 Welcome to my portfolio website! This site showcases my projects, skills, and experience in web development and 3D graphics. The website is built using Next.js 13, Typescript, Chakra UI, Framer Motion, Three.js, Magica Voxel, and Blender.
 
-## Table of Contents
-
-- [My Portfolio](#my-portfolio)
-  - [Description](#description)
-  - [Table of Contents](#table-of-contents)
-  - [Demo](#demo)
-  - [Technologies Used](#technologies-used)
-  - [License](#license)
-
 ## Demo
 
 A live demo of the portfolio website is available [here](https://www.nirmalfernando.dev/).
@@ -32,7 +23,7 @@ A live demo of the portfolio website is available [here](https://www.nirmalferna
 
 ## License
 
-MIT License.
+This project is licensed under the [MIT License](LICENSE).
 
 You can use my code as a guide for free without my permissions by forking this project under by giving me a credit and
 provide a link to [my website](https://www.nirmalfernando.dev). Please do not use the voxel character.
