@@ -1,7 +1,8 @@
 # My Portfolio
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/nirmalrepo/my-portfolio)
-![GitHub license](https://img.shields.io/github/license/nirmalrepo/my-portfolio)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: CC BY-NC-ND 4.0](https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 ## Description
 
