@@ -23,7 +23,7 @@ A live demo of the portfolio website is available [here](https://www.nirmalferna
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](./LICENSE).
 
 You can use my code as a guide for free without my permissions by forking this project under by giving me a credit and
 provide a link to [my website](https://www.nirmalfernando.dev). Please do not use the voxel character.
