@@ -328,8 +328,13 @@ const Work: React.FC = () => {
           migrating to Next.js 13 with TypeScript, dealing with partial
           compatibility of Framer Motion, venturing into Blender for voxel
           modeling, and transitioning to React Three Fiber further fueled my
-          passion for web development. I have plans to enhance it further with a
-          headless CMS in the future to make the website more dynamic and
+          passion for web development.I was inspired by Osaka based indi
+          developer{' '}
+          <a href="https://www.craftz.dog/" target="_blank">
+            Takuya Matsuyama's
+          </a>{' '}
+          work and his approch to his work. I have plans to enhance it further
+          with a headless CMS in the future to make the website more dynamic and
           content management seamless. As I look forward to sharing my
           knowledge, I am excited to create tutorial articles for each tool
           used, hoping to inspire and empower fellow developers to embrace
