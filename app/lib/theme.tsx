@@ -17,13 +17,13 @@ const components = {
   Heading: {
     variants: {
       'section-heading': {
-        fontSize: '2xl',
-        marginBottom: 3,
+        fontSize: '3xl',
+        marginBottom: 4,
         letterSpacing: '1px',
       },
       'section-sub-heading': {
-        fontSize: 'xl',
-        marginBottom: 3,
+        fontSize: '2xl',
+        marginBottom: 4,
         letterSpacing: '1px',
       },
     },

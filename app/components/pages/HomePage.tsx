@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import Timeline from '../Timeline'
 import SocialMediaIcons from '../SocialMediaIcons'
+import WorkGrid from '../WorkGrid'
 
 const ProfileImage = chakra(NextImage, {
   shouldForwardProp: (prop) => ['width', 'height', 'src', 'alt'].includes(prop),
@@ -54,7 +55,7 @@ const HomePage: React.FC = () => {
         </Box>
       </Box>
       <Box
-        p={6}
+        p={8}
         mb={8}
         borderRadius="md"
         backgroundColor={useColorModeValue('whiteAlpha.700', 'whiteAlpha.200')}
@@ -75,11 +76,27 @@ const HomePage: React.FC = () => {
           passions to make a mark in the world of web development.
         </Text>
       </Box>
-      <Box mb={8}>
+      <Box
+        p={8}
+        mb={8}
+        borderRadius="md"
+        backgroundColor={useColorModeValue('whiteAlpha.700', 'whiteAlpha.200')}
+      >
         <Heading as="h5" fontWeight="bold" variant="section-heading">
           Timeline
         </Heading>
         <Timeline />
+      </Box>
+      <Box
+        p={8}
+        mb={8}
+        borderRadius="md"
+        backgroundColor={useColorModeValue('whiteAlpha.700', 'whiteAlpha.200')}
+      >
+        <Heading as="h5" fontWeight="bold" variant="section-heading">
+          Latest Work
+        </Heading>
+        <WorkGrid />
       </Box>
     </>
   )

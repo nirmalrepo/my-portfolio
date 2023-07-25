@@ -21,6 +21,12 @@ const Work: React.FC = () => {
           My Portfolio
         </Heading>
       </Box>
+      <Box mb={8} borderRadius="md">
+        <ImageArticle
+          src="/images/work/my-portfolio/my-portfolio-thumbnail.jpg"
+          alt="My Portfolio Thumbnail"
+        />
+      </Box>
       <Box
         p={6}
         mb={8}
@@ -90,7 +96,7 @@ const Work: React.FC = () => {
           different approach to the routing.
         </Text>
         <LinkWithHoverSound
-          target="_blank"
+          isExternal
           href="https://nextjs.org/"
           color={useColorModeValue('caribbeanCurrent.500', 'hotOrange.100')}
           mb={4}
@@ -116,14 +122,14 @@ const Work: React.FC = () => {
           website.
         </Text>
         <LinkWithHoverSound
-          target="_blank"
+          isExternal
           href="https://chakra-ui.com/"
           color={useColorModeValue('caribbeanCurrent.500', 'hotOrange.100')}
         >
           Visit Chakra UI
         </LinkWithHoverSound>
         <ImageArticle
-          src="/images/work/my-portfolio/chakra-website.jpg"
+          src="/images/work/my-portfolio/chakra-ui.jpg"
           alt="Chakra UI"
         />
       </Box>
@@ -143,14 +149,14 @@ const Work: React.FC = () => {
           incorporate stunning animations into my portfolio.
         </Text>
         <LinkWithHoverSound
-          target="_blank"
+          isExternal
           href="https://www.framer.com/"
           color={useColorModeValue('caribbeanCurrent.500', 'hotOrange.100')}
         >
           Visit Framer Motion
         </LinkWithHoverSound>
         <ImageArticle
-          src="/images/work/my-portfolio/framer-motion-website.jpg"
+          src="/images/work/my-portfolio/framer-motion.jpg"
           alt="Framer Motion"
         />
       </Box>
@@ -173,7 +179,7 @@ const Work: React.FC = () => {
           character and export as a gltf object.
         </Text>
         <LinkWithHoverSound
-          target="_blank"
+          isExternal
           href="https://ephtracy.github.io/"
           color={useColorModeValue('caribbeanCurrent.500', 'hotOrange.100')}
         >
@@ -181,14 +187,14 @@ const Work: React.FC = () => {
         </LinkWithHoverSound>
         {' || '}
         <LinkWithHoverSound
-          target="_blank"
+          isExternal
           href="https://www.blender.org/"
           color={useColorModeValue('caribbeanCurrent.500', 'hotOrange.100')}
         >
           Download Blender
         </LinkWithHoverSound>
         <ImageArticle
-          src="/images/work/my-portfolio/magica-voxel.jpg"
+          src="/images/work/my-portfolio/magica-voxel-ui.jpg"
           alt="Magica Voxel"
         />
       </Box>
@@ -208,7 +214,7 @@ const Work: React.FC = () => {
           3D scenes.
         </Text>
         <LinkWithHoverSound
-          target="_blank"
+          isExternal
           href="https://threejs.org/examples/"
           color={useColorModeValue('caribbeanCurrent.500', 'hotOrange.100')}
         >
@@ -231,7 +237,7 @@ const Work: React.FC = () => {
           my Next.js project.
         </Text>
         <LinkWithHoverSound
-          target="_blank"
+          isExternal
           href="https://vercel.com/"
           color={useColorModeValue('caribbeanCurrent.500', 'hotOrange.100')}
         >

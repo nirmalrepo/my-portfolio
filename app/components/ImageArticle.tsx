@@ -8,24 +8,22 @@ interface ImageArticleProps {
 }
 
 const BlogImage = chakra(NextImage, {
-  shouldForwardProp: (prop) =>
-    ['src', 'alt', 'objectFit', 'layout', 'loading'].includes(prop),
+  shouldForwardProp: (prop) => ['src', 'alt', 'loading', 'fill'].includes(prop),
 })
 
 const ImageArticle: React.FC<ImageArticleProps> = (props) => {
   const { src, alt } = props
 
   return (
-    <Box position="relative" mt={4} width="100%" height="auto">
+    <Box position="relative" width="100%" height="auto">
       <BlogImage
         src={src}
         alt={alt}
-        objectFit="contain"
         loading="lazy"
-        layout="fill"
+        fill="true"
         borderRadius="md"
         my={4}
-        sx={{ position: 'relative !important' }}
+        sx={{ position: 'relative !important', objectFit: 'contain' }}
       />
     </Box>
   )
