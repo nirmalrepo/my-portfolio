@@ -106,6 +106,10 @@ export default function NavBar() {
                     fill="true"
                     alt="Logo Image"
                     loading="lazy"
+                    sx={{
+                      width: '100%',
+                      objectFit: 'contain',
+                    }}
                   />
                 </Box>
                 <Box
