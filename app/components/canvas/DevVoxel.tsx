@@ -1,14 +1,12 @@
-"use client";
-
-import { Suspense } from "react";
-import dynamic from "next/dynamic";
-import { Box } from "@chakra-ui/react";
-import { Html, useProgress } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
+'use client'
+import dynamic from 'next/dynamic'
+import { Box } from '@chakra-ui/react'
+import { Html } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 function Loader() {
   const loaderStyles = {
-    marginTop: "-200%",
-  };
+    marginTop: '-200%',
+  }
   return (
     <Html center>
       <div className="here" style={loaderStyles}>
@@ -73,27 +71,27 @@ function Loader() {
         </svg>
       </div>
     </Html>
-  );
+  )
 }
 
 const View = dynamic(
-  () => import("@/app/components/canvas/View").then((mod) => mod.View),
+  () => import('@/app/components/canvas/View').then((mod) => mod.View),
   {
     ssr: false,
     loading: Loader,
   }
-);
+)
 
-const DevVoxel = () => {
+const DevVoxel: React.FC = () => {
   return (
     <>
       <Box
         className="voxel-dog"
         m="auto"
-        mt={["100px", "120px", "20px"]}
-        mb={["-160px", "-300px", "-280px"]}
-        w={["100%", 480, 640]}
-        h={["280", 480, 640]}
+        mt={['100px', '120px', '20px']}
+        mb={['-160px', '-300px', '-280px']}
+        w={['100%', 480, 640]}
+        h={['280', 480, 640]}
         position="relative"
       >
         <Canvas>
@@ -101,7 +99,7 @@ const DevVoxel = () => {
         </Canvas>
       </Box>
     </>
-  );
-};
+  )
+}
 
-export default DevVoxel;
+export default DevVoxel

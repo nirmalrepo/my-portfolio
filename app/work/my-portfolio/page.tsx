@@ -125,10 +125,6 @@ const Work: React.FC = () => {
         <ImageArticle
           src="/images/work/my-portfolio/chakra-website.jpg"
           alt="Chakra UI"
-          objectFit="cover"
-          loading="lazy"
-          layout="fill"
-          mt={4}
         />
       </Box>
       <Box
@@ -156,10 +152,6 @@ const Work: React.FC = () => {
         <ImageArticle
           src="/images/work/my-portfolio/framer-motion-website.jpg"
           alt="Framer Motion"
-          objectFit="cover"
-          loading="lazy"
-          layout="fill"
-          mt={4}
         />
       </Box>
       <Box
@@ -197,11 +189,7 @@ const Work: React.FC = () => {
         </LinkWithHoverSound>
         <ImageArticle
           src="/images/work/my-portfolio/magica-voxel.jpg"
-          alt="Framer Motion"
-          objectFit="cover"
-          loading="lazy"
-          layout="fill"
-          mt={4}
+          alt="Magica Voxel"
         />
       </Box>
       <Box

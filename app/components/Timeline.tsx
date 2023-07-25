@@ -1,11 +1,10 @@
-import { MoonIcon } from '@chakra-ui/icons'
-import { Box, Flex, Icon, Text, VStack } from '@chakra-ui/react'
+import { Box, Flex, Text, VStack } from '@chakra-ui/react'
 import Image from 'next/image'
 import theme from '../lib/theme'
 interface TimelineItemProps {
   year: string
   description: string
-  imageName: string // New prop for the image name
+  imageName: string
   isLast?: boolean
 }
 
@@ -19,7 +18,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
     <Box mt={1}>
       <Box w="30px" h="30px">
         <Image
-          src={`/images/icons/${imageName}.png`} // Using the image name prop in the image source
+          src={`/images/icons/${imageName}.png`}
           alt="Profile Image"
           width="40"
           height="40"
