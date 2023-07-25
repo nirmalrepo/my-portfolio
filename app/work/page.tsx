@@ -1,11 +1,12 @@
-'use client'
-import Image from 'next/image'
-
-const Work: React.FC = () => {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Work</h1>
-    </main>
-  )
+import WorkPage from '../components/pages/WorkPage'
+export const metadata = {
+  title:
+    'Work | Nirmal Fernando | Fullstack Web Developer, Based in Nelson, New Zealand',
+  description:
+    "Explore Nirmal Fernando's impressive portfolio as a Fullstack Web Developer based in Nelson, New Zealand. Discover various web projects and applications showcasing his skills and expertise.",
 }
+const Work: React.FC = () => {
+  return <WorkPage />
+}
+
 export default Work

@@ -1,34 +1,33 @@
 'use client'
-import { ReactNode, forwardRef, Ref } from 'react'
+import { forwardRef } from 'react'
+import NextLink from 'next/link'
+import NextImage from 'next/image'
+import { usePathname } from 'next/navigation'
 import {
   Box,
-  Flex,
+  Text,
   HStack,
   IconButton,
-  Button,
   Menu,
-  Link,
   MenuButton,
   MenuList,
   MenuItem,
   useColorMode,
   useColorModeValue,
-  Stack,
   Container,
+  useTheme,
+  chakra,
 } from '@chakra-ui/react'
-import NextLink from 'next/link'
 import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
-
+import useSound from 'use-sound'
+import GreetingText from './GreetingText'
+import LinkWithHoverSound from './LinkWithHoverSound'
 export interface NavItem {
   label: string
   href: string
 }
 
 export const Links: NavItem[] = [
-  {
-    label: 'Home',
-    href: '/',
-  },
   {
     label: 'Work',
     href: '/work',
@@ -37,37 +36,99 @@ export const Links: NavItem[] = [
     label: 'Hobbies',
     href: '/hobbies',
   },
-  {
-    label: 'Contact',
-    href: '/contact',
-  },
 ]
+const LogoImage = chakra(NextImage, {
+  shouldForwardProp: (prop) => ['fill', 'src', 'alt'].includes(prop),
+})
+export const NavLink = forwardRef<HTMLAnchorElement, any>((props, ref) => {
+  const pathname = usePathname()
+  const isActive = pathname.toLowerCase() === props.href.toLowerCase()
+  const inactiveColor = useColorModeValue('gray.800', 'whiteAlpha.900')
+  const activeHoverBgColor = useColorModeValue(
+    'hotOrange.500',
+    'papayaWhip.100'
+  )
+  const activeHoverTextColor = useColorModeValue('whiteAlpha.900', 'gray.800')
 
-export const NavLink = forwardRef<HTMLAnchorElement, any>((props, ref) => (
-  <Link as={NextLink} href={`${props.href}`} ref={ref} {...props} />
-))
-
+  return (
+    <LinkWithHoverSound
+      as={NextLink}
+      href={`${props.href}`}
+      ref={ref}
+      {...props}
+      bg={isActive ? activeHoverBgColor : undefined}
+      px={4}
+      py={2}
+      rounded={'full'}
+      color={isActive ? activeHoverTextColor : inactiveColor}
+    />
+  )
+})
 NavLink.displayName = 'NavLink'
 
 export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode()
-
+  const [play] = useSound('sounds/switch-on.mp3')
+  const toggleColorModeWithSound = () => {
+    play()
+    toggleColorMode()
+  }
+  const theme = useTheme()
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box
+        position="fixed"
+        w="100%"
+        bg={useColorModeValue('#ffecd140', '#00152480')}
+        px={2}
+        css={{ backdropFilter: 'blur(10px)' }}
+        zIndex={2}
+        top={0}
+      >
         <Container
           display="flex"
           h={16}
           alignItems={'center'}
           justifyContent={'space-between'}
           mx="auto"
-          maxW="container.md"
+          maxW="800px"
         >
           <HStack spacing={8} alignItems={'center'}>
-            <Box>Logo</Box>
+            <NextLink href="/" scroll={false}>
+              <Box
+                flexShrink={0}
+                display={{ md: 'flex' }}
+                py={5}
+                alignItems="center"
+              >
+                {/* <Box
+                  w="30px"
+                  h="30px"
+                  overflow="hidden"
+                  position="relative"
+                >
+                  <LogoImage
+                    src="/images/Logo.png"
+                    fill="true"
+                    alt="Logo Image"
+                  />
+                </Box> */}
+                <Text
+                  color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+                  fontFamily={theme.fonts.heading}
+                  fontWeight="bold"
+                  ml={{ base: 0, md: '3' }}
+                >
+                  Nirmal Fernando
+                </Text>
+                <GreetingText />
+              </Box>
+            </NextLink>
+          </HStack>
+          <HStack spacing={{ md: '8' }} alignItems={'center'}>
             <HStack
               as={'nav'}
-              spacing={4}
+              spacing={2}
               display={{ base: 'none', md: 'flex' }}
             >
               {Links.map((link) => (
@@ -76,12 +137,14 @@ export default function NavBar() {
                 </NavLink>
               ))}
             </HStack>
-          </HStack>
-          <HStack spacing={8} alignItems={'center'}>
             <Box>
-              <Button onClick={toggleColorMode}>
+              <IconButton
+                aria-label="Toggle theme mode"
+                colorScheme={useColorModeValue('caribbeanCurrent', 'hotOrange')}
+                onClick={toggleColorModeWithSound}
+              >
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              </Button>
+              </IconButton>
             </Box>
 
             <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
@@ -102,13 +165,6 @@ export default function NavBar() {
               </Menu>
             </Box>
           </HStack>
-          {/* <IconButton
-            size={'md'}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
-            onClick={isOpen ? onClose : onOpen}
-          /> */}
         </Container>
       </Box>
     </>

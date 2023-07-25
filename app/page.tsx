@@ -1,16 +1,11 @@
-"use client";
-import Image from "next/image";
-import { Link } from "@chakra-ui/next-js";
-import { Box, Container, Heading } from "@chakra-ui/react";
+import HomePage from './components/pages/HomePage'
+export const metadata = {
+  title:
+    'Nirmal Fernando | Fullstack Web Developer, Based in Nelson, New Zealand',
+  description: 'Fullstack Web Developer, Based in Nelson, New Zealand',
+}
+
 const Home: React.FC = () => {
-  return (
-    <Container maxW="container.md">
-      <Box display={{ md: "flex" }} py={5}>
-        <Heading as="h2" variant="page-title">
-          Nirmal Fernando
-        </Heading>
-      </Box>
-    </Container>
-  );
-};
-export default Home;
+  return <HomePage />
+}
+export default Home
