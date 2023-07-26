@@ -38,7 +38,7 @@ export const Links: NavItem[] = [
   },
 ]
 const LogoImage = chakra(NextImage, {
-  shouldForwardProp: (prop) => ['fill', 'src', 'alt'].includes(prop),
+  shouldForwardProp: (prop) => ['width', 'height', 'src', 'alt'].includes(prop),
 })
 export const NavLink = forwardRef<HTMLAnchorElement, any>((props, ref) => {
   const pathname = usePathname()
@@ -73,6 +73,10 @@ export default function NavBar() {
     play()
     toggleColorMode()
   }
+  const logoImageUrl =
+    colorMode === 'light'
+      ? '/images/nf-logo-blue.png'
+      : '/images/nf-logo-orange.png'
   const theme = useTheme()
   return (
     <>
@@ -95,33 +99,31 @@ export default function NavBar() {
         >
           <HStack spacing={8} alignItems={'center'}>
             <NextLink href="/" scroll={false}>
-              <Box
-                flexShrink={0}
-                display={{ md: 'flex' }}
-                py={5}
-                alignItems="center"
-              >
-                {/* <Box
-                  w="30px"
-                  h="30px"
-                  overflow="hidden"
-                  position="relative"
-                >
+              <Box py={5} display="flex" alignItems="center" gap={2}>
+                <Box w="40px" h="40px" overflow="hidden" position="relative">
                   <LogoImage
-                    src="/images/Logo.png"
-                    fill="true"
+                    width="40"
+                    height="40"
+                    src={logoImageUrl}
                     alt="Logo Image"
+                    loading="lazy"
+                    boxSize="40px"
                   />
-                </Box> */}
-                <Text
-                  color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-                  fontFamily={theme.fonts.heading}
-                  fontWeight="bold"
-                  ml={{ base: 0, md: '3' }}
+                </Box>
+                <Box
+                  flexShrink={0}
+                  display={{ md: 'flex' }}
+                  alignItems="center"
                 >
-                  Nirmal Fernando
-                </Text>
-                <GreetingText />
+                  <Text
+                    color={useColorModeValue('gray.800', 'whiteAlpha.900')}
+                    fontFamily={theme.fonts.heading}
+                    fontWeight="bold"
+                  >
+                    Nirmal Fernando
+                  </Text>
+                  <GreetingText />
+                </Box>
               </Box>
             </NextLink>
           </HStack>
