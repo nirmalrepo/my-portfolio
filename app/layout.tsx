@@ -3,6 +3,8 @@ import NavBar from './components/NavBar'
 import DevVoxel from './components/canvas/DevVoxel'
 import { AnimatePresenceWrapper } from './components/wrappers/animate-presence-wrapper'
 import Footer from './components/Footer'
+import HeaderScripts from './components/HeaderScripts'
+import FooterScripts from './components/wrappers/FooterScripts'
 
 export const metadata = {
   title:
@@ -17,7 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <HeaderScripts />
+      </head>
       <body>
         <Providers>
           <NavBar />
@@ -25,6 +29,7 @@ export default function RootLayout({
           <AnimatePresenceWrapper>{children}</AnimatePresenceWrapper>
           <Footer />
         </Providers>
+        <FooterScripts />
       </body>
     </html>
   )
