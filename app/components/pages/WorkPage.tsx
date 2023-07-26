@@ -16,7 +16,7 @@ const WorkPage: React.FC = () => {
         </Text>
       </Box>
       <Box
-        px={8}
+        px={6}
         pt={6}
         pb={8}
         mb={8}
