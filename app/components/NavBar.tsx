@@ -38,7 +38,7 @@ export const Links: NavItem[] = [
   },
 ]
 const LogoImage = chakra(NextImage, {
-  shouldForwardProp: (prop) => ['fill', 'src', 'alt', 'loading'].includes(prop),
+  shouldForwardProp: (prop) => ['width', 'height', 'src', 'alt'].includes(prop),
 })
 export const NavLink = forwardRef<HTMLAnchorElement, any>((props, ref) => {
   const pathname = usePathname()
@@ -102,14 +102,12 @@ export default function NavBar() {
               <Box py={5} display="flex" alignItems="center" gap={2}>
                 <Box w="40px" h="40px" overflow="hidden" position="relative">
                   <LogoImage
+                    width="40"
+                    height="40"
                     src={logoImageUrl}
-                    fill="true"
                     alt="Logo Image"
                     loading="lazy"
-                    sx={{
-                      width: '100%',
-                      objectFit: 'contain',
-                    }}
+                    boxSize="40px"
                   />
                 </Box>
                 <Box
