@@ -111,7 +111,6 @@ export default function NavBar() {
                     height="40"
                     src={logoImageUrl}
                     alt="Logo Image"
-                    loading="lazy"
                     boxSize="40px"
                   />
                 </Box>
