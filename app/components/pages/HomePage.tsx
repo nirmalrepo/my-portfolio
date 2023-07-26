@@ -55,7 +55,7 @@ const HomePage: React.FC = () => {
         </Box>
       </Box>
       <Box
-        p={8}
+        p={6}
         mb={8}
         borderRadius="md"
         backgroundColor={useColorModeValue('whiteAlpha.700', 'whiteAlpha.200')}
@@ -77,7 +77,7 @@ const HomePage: React.FC = () => {
         </Text>
       </Box>
       <Box
-        p={8}
+        p={6}
         mb={8}
         borderRadius="md"
         backgroundColor={useColorModeValue('whiteAlpha.700', 'whiteAlpha.200')}
@@ -88,7 +88,7 @@ const HomePage: React.FC = () => {
         <Timeline />
       </Box>
       <Box
-        p={8}
+        p={6}
         mb={8}
         borderRadius="md"
         backgroundColor={useColorModeValue('whiteAlpha.700', 'whiteAlpha.200')}
