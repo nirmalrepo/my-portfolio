@@ -1,6 +1,6 @@
 import { extendTheme, StyleFunctionProps } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
-import { M_PLUS_Rounded_1c, Noto_Sans_Sinhala, Nunito } from "next/font/google";
+import { Noto_Sans_Sinhala, Overpass } from "next/font/google";
 
 const config = {
   initialColorMode: "dark",
@@ -91,7 +91,7 @@ const colors = {
     900: "#FFAA33",
   },
 };
-const Nunito_Font = Nunito({
+const Overpass_Font = Overpass({
   subsets: ["latin"],
   weight: "400",
 });
@@ -101,7 +101,7 @@ const Noto_Sans_Sin = Noto_Sans_Sinhala({
 });
 
 const fonts = {
-  heading: Nunito_Font.style.fontFamily,
+  heading: Overpass_Font.style.fontFamily,
   sinhala: Noto_Sans_Sin.style.fontFamily,
 };
 
