@@ -52,7 +52,7 @@ const Timeline: React.FC = () => (
       imageName="srilanka"
     />
     <TimelineItem
-      year="2019"
+      year="2009"
       description="Completed G.C.E A/L at St.Annes College"
       imageName="degree"
     />
