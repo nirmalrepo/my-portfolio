@@ -1,5 +1,5 @@
-"use client";
-import NextImage from "next/image";
+'use client'
+import NextImage from 'next/image'
 import {
   Box,
   Heading,
@@ -7,23 +7,24 @@ import {
   chakra,
   useTheme,
   useColorModeValue,
-} from "@chakra-ui/react";
-import Timeline from "../Timeline";
-import SocialMediaIcons from "../SocialMediaIcons";
-import WorkGrid from "../WorkGrid";
+} from '@chakra-ui/react'
+import Timeline from '../Timeline'
+import SocialMediaIcons from '../SocialMediaIcons'
+import WorkGrid from '../WorkGrid'
 
 const ProfileImage = chakra(NextImage, {
-  shouldForwardProp: (prop) => ["width", "height", "src", "alt"].includes(prop),
-});
+  shouldForwardProp: (prop) => ['width', 'height', 'src', 'alt'].includes(prop),
+})
 
 const HomePage: React.FC = () => {
-  const theme = useTheme();
+  const theme = useTheme()
+  const sinhalaFont = theme?.fonts?.sinhala || `'Open Sans', sans-serif`
   return (
     <>
-      <Box py={5} gap={6} display={{ md: "flex" }}>
+      <Box py={5} gap={6} display={{ md: 'flex' }}>
         <Box flexShrink={0}>
           <Box
-            borderColor={"whiteAlpha.800"}
+            borderColor={'whiteAlpha.800'}
             borderWidth={2}
             borderStyle="solid"
             w="100px"
@@ -44,8 +45,8 @@ const HomePage: React.FC = () => {
         </Box>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
-            Nirmal Fernando{" "}
-            <Text as="span" fontSize="xl" fontFamily={theme.fonts.sinhala}>
+            Nirmal Fernando{' '}
+            <Text as="span" fontSize="xl" fontFamily={sinhalaFont}>
               (නිර්මාල් ප්‍රනාන්දු)
             </Text>
           </Heading>
@@ -59,7 +60,7 @@ const HomePage: React.FC = () => {
         p={6}
         mb={8}
         borderRadius="md"
-        backgroundColor={useColorModeValue("whiteAlpha.700", "whiteAlpha.200")}
+        backgroundColor={useColorModeValue('whiteAlpha.700', 'whiteAlpha.200')}
       >
         <Heading as="h6" fontWeight="bold" variant="section-heading">
           Intro
@@ -81,7 +82,7 @@ const HomePage: React.FC = () => {
         p={6}
         mb={8}
         borderRadius="md"
-        backgroundColor={useColorModeValue("whiteAlpha.700", "whiteAlpha.200")}
+        backgroundColor={useColorModeValue('whiteAlpha.700', 'whiteAlpha.200')}
       >
         <Heading as="h5" fontWeight="bold" variant="section-heading">
           Timeline
@@ -92,7 +93,7 @@ const HomePage: React.FC = () => {
         p={6}
         mb={8}
         borderRadius="md"
-        backgroundColor={useColorModeValue("whiteAlpha.700", "whiteAlpha.200")}
+        backgroundColor={useColorModeValue('whiteAlpha.700', 'whiteAlpha.200')}
       >
         <Heading as="h5" fontWeight="bold" variant="section-heading">
           Latest Work
@@ -100,6 +101,6 @@ const HomePage: React.FC = () => {
         <WorkGrid />
       </Box>
     </>
-  );
-};
-export default HomePage;
+  )
+}
+export default HomePage

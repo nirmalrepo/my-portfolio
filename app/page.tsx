@@ -5,7 +5,7 @@ export const metadata = {
   description: 'Fullstack Web Developer, Based in Nelson, New Zealand',
 }
 
-const Home: React.FC = () => {
+const Home = () => {
   return <HomePage />
 }
 export default Home
