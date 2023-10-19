@@ -1,11 +1,11 @@
-import { Box, Flex, Text, VStack } from '@chakra-ui/react'
-import Image from 'next/image'
-import theme from '../lib/theme'
+import { Box, Flex, Text, VStack } from "@chakra-ui/react";
+import Image from "next/image";
+import theme from "../lib/theme";
 interface TimelineItemProps {
-  year: string
-  description: string
-  imageName: string
-  isLast?: boolean
+  year: string;
+  description: string;
+  imageName: string;
+  isLast?: boolean;
 }
 
 const TimelineItem: React.FC<TimelineItemProps> = ({
@@ -42,7 +42,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
       />
     )}
   </Flex>
-)
+);
 
 const Timeline: React.FC = () => (
   <VStack spacing={4} align="start">
@@ -92,12 +92,17 @@ const Timeline: React.FC = () => (
       imageName="degree"
     />
     <TimelineItem
-      year="2018 to present"
-      description="Web Developer | Currently working at Downing Design, Nelson"
+      year="2023"
+      description="Web Developer | Downing Design, Nelson"
+      imageName="dev"
+    />
+    <TimelineItem
+      year="2023 to present"
+      description="Lead Software Engineer | Currently working at Greenpeace Aotearoa, Auckland"
       imageName="dev"
       isLast
     />
   </VStack>
-)
+);
 
-export default Timeline
+export default Timeline;
