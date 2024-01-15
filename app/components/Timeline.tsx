@@ -92,7 +92,7 @@ const Timeline: React.FC = () => (
       imageName="degree"
     />
     <TimelineItem
-      year="2023"
+      year="2018"
       description="Web Developer | Downing Design, Nelson"
       imageName="dev"
     />
