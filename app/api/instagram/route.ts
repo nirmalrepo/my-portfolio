@@ -12,7 +12,7 @@ export async function GET(request: Request) {
     let feed = await response.json();
     return NextResponse.json(feed);
   } catch (error) {
-    let msg = { error: url };
+    let msg = { error: "Failed to fetch data" };
     return NextResponse.json(msg);
   }
 }
