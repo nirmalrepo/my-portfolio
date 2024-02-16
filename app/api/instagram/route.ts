@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
   const url = `https://graph.instagram.com/me/media?fields=id,caption,media_url,timestamp,media_type,permalink&access_token=${process.env.INSTAGRAM_KEY}`;
+
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -11,7 +12,7 @@ export async function GET(request: Request) {
     let feed = await response.json();
     return NextResponse.json(feed);
   } catch (error) {
-    let msg = { error: "Failed to fetch data" };
+    let msg = { error: error };
     return NextResponse.json(msg);
   }
 }
