@@ -12,7 +12,7 @@ export async function GET(request: Request) {
     let feed = await response.json();
     return NextResponse.json(feed);
   } catch (error) {
-    let msg = { error: error };
+    let msg = { error: url };
     return NextResponse.json(msg);
   }
 }
