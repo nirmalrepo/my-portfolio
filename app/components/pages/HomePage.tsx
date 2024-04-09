@@ -67,11 +67,11 @@ const HomePage: React.FC = () => {
         <Text>
           Nirmal is a full-stack web developer based in Nelson NZ, with a
           passion for creative coding and front-end development. Currently, he
-          is working as a Senior Web Developer, utilizing his expertise to
-          create exceptional digital experiences. Outside of his work life, he
-          finds joy in capturing the breathtaking landscapes of New Zealand
-          through his iPhone lens, skillfully editing them to enhance their
-          beauty. Additionally, Nirmal has a deep love for cooking and enjoys
+          is working as a Software Engineer, utilizing his expertise to create
+          exceptional digital experiences. Outside of his work life, he finds
+          joy in capturing the breathtaking landscapes of New Zealand through
+          his iPhone lens, skillfully editing them to enhance their beauty.
+          Additionally, Nirmal has a deep love for cooking and enjoys
           experimenting with flavors and dishes. Join Nirmal on his journey as
           he combines his technical skills, artistic vision, and culinary
           passions to make a mark in the world of web development.
