@@ -47,44 +47,19 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
 const Timeline: React.FC = () => (
   <VStack spacing={4} align="start">
     <TimelineItem
-      year="1989"
-      description="Born in Kurunegala (කුරුණෑගල), Sri Lanka"
-      imageName="srilanka"
-    />
-    <TimelineItem
-      year="2009"
-      description="Completed G.C.E A/L at St.Annes College"
-      imageName="degree"
-    />
-    <TimelineItem
-      year="2010"
-      description="Moving to Chennai (சென்னை), India"
-      imageName="india"
-    />
-    <TimelineItem
-      year="2014"
-      description="Graduated as B.Tech in Computer Scince & Engineering with First Class Distinction from Bharath University, Chennai (சென்னை), India"
-      imageName="degree"
-    />
-    <TimelineItem
-      year="2015"
-      description="Software Engineer | Worked at Management Development Co-operative Co. Ltd Kurunegala (කුරුණෑගල), Sri Lanka"
+      year="2024 to present"
+      description="Software Engineer | Currently working at SquareKicker, Nelson"
       imageName="dev"
     />
     <TimelineItem
-      year="2016"
-      description="Software Engineer | Worked at Seebo Networks Colombo (කොළඹ), Sri Lanka"
+      year="2023 to 2024"
+      description="Lead Software Engineer | Currently working at Greenpeace Aotearoa, Auckland"
       imageName="dev"
     />
     <TimelineItem
       year="2018"
-      description="Team Lead | Worked at Wollstra Tech Colombo (කොළඹ), Sri Lanka"
+      description="Web Developer | Downing Design, Nelson"
       imageName="dev"
-    />
-    <TimelineItem
-      year="2018"
-      description="Migrated to Aotearoa"
-      imageName="nz"
     />
     <TimelineItem
       year="2018"
@@ -93,13 +68,43 @@ const Timeline: React.FC = () => (
     />
     <TimelineItem
       year="2018"
-      description="Web Developer | Downing Design, Nelson"
+      description="Migrated to Aotearoa"
+      imageName="nz"
+    />
+    <TimelineItem
+      year="2018"
+      description="Team Lead | Worked at Wollstra Tech Colombo (කොළඹ), Sri Lanka"
       imageName="dev"
     />
     <TimelineItem
-      year="2023 to present"
-      description="Lead Software Engineer | Currently working at Greenpeace Aotearoa, Auckland"
+      year="2016"
+      description="Software Engineer | Worked at Seebo Networks Colombo (කොළඹ), Sri Lanka"
       imageName="dev"
+    />
+    <TimelineItem
+      year="2015"
+      description="Software Engineer | Worked at Management Development Co-operative Co. Ltd Kurunegala (කුරුණෑගල), Sri Lanka"
+      imageName="dev"
+    />
+    <TimelineItem
+      year="2014"
+      description="Graduated as B.Tech in Computer Scince & Engineering with First Class Distinction from Bharath University, Chennai (சென்னை), India"
+      imageName="degree"
+    />
+    <TimelineItem
+      year="2010"
+      description="Moving to Chennai (சென்னை), India"
+      imageName="india"
+    />
+    <TimelineItem
+      year="2009"
+      description="Completed G.C.E A/L at St.Annes College"
+      imageName="degree"
+    />
+    <TimelineItem
+      year="1989"
+      description="Born in Kurunegala (කුරුණෑගල), Sri Lanka"
+      imageName="srilanka"
       isLast
     />
   </VStack>
