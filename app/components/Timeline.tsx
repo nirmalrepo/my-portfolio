@@ -53,7 +53,7 @@ const Timeline: React.FC = () => (
     />
     <TimelineItem
       year="2023 to 2024"
-      description="Lead Software Engineer | Currently working at Greenpeace Aotearoa, Auckland"
+      description="Lead Software Engineer | Greenpeace Aotearoa, Auckland"
       imageName="dev"
     />
     <TimelineItem

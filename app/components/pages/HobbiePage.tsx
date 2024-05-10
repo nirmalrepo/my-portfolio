@@ -16,7 +16,7 @@ const HobbiePage: React.FC = () => {
         </Text>
       </Box>
 
-      <InstagramGrid />
+      {/* <InstagramGrid /> */}
     </>
   );
 };
