@@ -1,8 +1,32 @@
-import Script from 'next/script'
+import Script from "next/script";
 
 const HeaderScripts = () => {
   return (
     <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              try {
+                var mode = localStorage.getItem('chakra-ui-color-mode');
+                if (!mode) {
+                  var mql = window.matchMedia('(prefers-color-scheme: dark)');
+                  mode = mql.matches ? 'dark' : 'light';
+                }
+                if (mode === 'dark') {
+                  document.documentElement.classList.add('chakra-ui-dark');
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                  document.documentElement.style.colorScheme = 'dark';
+                } else {
+                  document.documentElement.classList.add('chakra-ui-light');
+                  document.documentElement.setAttribute('data-theme', 'light');
+                  document.documentElement.style.colorScheme = 'light';
+                }
+              } catch (e) {}
+            })();
+          `,
+        }}
+      />
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -11,7 +35,7 @@ const HeaderScripts = () => {
     })(window,document,'script','dataLayer','GTM-WTW5TDBK');`}
       </Script>
     </>
-  )
-}
+  );
+};
 
-export default HeaderScripts
+export default HeaderScripts;
