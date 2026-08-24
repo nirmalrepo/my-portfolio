@@ -1,8 +1,7 @@
 "use client";
 
 import createCache from "@emotion/cache";
-// import { CacheProvider } from "@emotion/react";
-import { CacheProvider } from "@chakra-ui/next-js";
+import { CacheProvider } from "@emotion/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "./lib/theme";
 const emotionCache = createCache({
@@ -12,7 +11,7 @@ const emotionCache = createCache({
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <CacheProvider>
+    <CacheProvider value={emotionCache}>
       <ChakraProvider theme={theme}>{children}</ChakraProvider>
     </CacheProvider>
   );

@@ -3,9 +3,8 @@ import Script from "next/script";
 const HeaderScripts = () => {
   return (
     <>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
+      <Script id="chakra-color-mode-init" strategy="beforeInteractive">
+        {`
             (function() {
               try {
                 var mode = localStorage.getItem('chakra-ui-color-mode');
@@ -24,9 +23,9 @@ const HeaderScripts = () => {
                 }
               } catch (e) {}
             })();
-          `,
-        }}
-      />
+          `}
+      </Script>
+
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
